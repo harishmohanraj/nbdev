@@ -29,6 +29,7 @@ if cfg.get('pip_requirements'): requirements += cfg.get('pip_requirements','').s
 min_python = cfg['min_python']
 lic = licenses.get(cfg['license'].lower(), (cfg['license'], None))
 dev_requirements = (cfg.get('dev_requirements') or '').split()
+dev_requirements.append("nbdev-mkdocs @ git+https://github.com/airtai/nbdev-mkdocs.git@refactor-summary-nav-template")
 project_urls = {}
 if cfg.get('doc_host'): project_urls["Documentation"] = cfg['doc_host'] + cfg.get('doc_baseurl', '')
 
