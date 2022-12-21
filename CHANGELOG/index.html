@@ -1,0 +1,3370 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Create delightful software with Jupyter Notebooks">
+      
+      
+        <meta name="author" content="Jeremy Howard and Hamel Husain">
+      
+      
+        <link rel="canonical" href="https://nbdev.fast.ai/CHANGELOG/">
+      
+      <link rel="icon" href="../overrides/images/compass-outline.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Releases - nbdev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../overrides/css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+    
+  
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="nbdev - Releases" />
+  <meta property="og:description" content="Create delightful software with Jupyter Notebooks" />
+  <meta property="og:url" content="https://nbdev.fast.ai/CHANGELOG/" />
+  <meta property="og:image" content="https://opengraph.githubassets.com/1671517121.069872/fastai/nbdev" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="nbdev - Releases" />
+  <meta name="twitter:description" content="Create delightful software with Jupyter Notebooks" />
+  <meta name="twitter:image" content="https://opengraph.githubassets.com/1671517121.069872/fastai/nbdev" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#release-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="nbdev" class="md-header__button md-logo" aria-label="nbdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 17 3.2-6.8L17 7l-3.2 6.8L7 17m5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            nbdev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Releases
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fastai/nbdev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nbdev
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="nbdev" class="md-nav__button md-logo" aria-label="nbdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 17 3.2-6.8L17 7l-3.2 6.8L7 17m5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8Z"/></svg>
+
+    </a>
+    nbdev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fastai/nbdev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nbdev
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating/" class="md-nav__link">
+        nbdev1 Migration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../tutorials/">Tutorials</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/best_practices/" class="md-nav__link">
+        Notebook Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/blogging/" class="md-nav__link">
+        Blogging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/docs_only/" class="md-nav__link">
+        Documentation Only Sites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/git_friendly_jupyter/" class="md-nav__link">
+        Git-Friendly Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/modular_nbdev/" class="md-nav__link">
+        Modular nbdev
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/pre_commit/" class="md-nav__link">
+        Pre-Commit Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/qmd_intro/" class="md-nav__link">
+        Qmd Documents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/renderscript/" class="md-nav__link">
+        RenderScripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/tutorial/" class="md-nav__link">
+        End-To-End Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../explanations/">Explanations</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Explanations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Explanations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanations/config/" class="md-nav__link">
+        Settings.ini
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanations/directives/" class="md-nav__link">
+        Directives
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanations/docs/" class="md-nav__link">
+        Docs Website
+      </a>
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanations/why_nbdev/" class="md-nav__link">
+        Why nbdev
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../api/">API</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/clean/" class="md-nav__link">
+        clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/cli/" class="md-nav__link">
+        cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/config/" class="md-nav__link">
+        config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/doclinks/" class="md-nav__link">
+        doclinks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/export/" class="md-nav__link">
+        export
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/frontmatter/" class="md-nav__link">
+        frontmatter
+      </a>
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/maker/" class="md-nav__link">
+        maker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/merge/" class="md-nav__link">
+        merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/migrate/" class="md-nav__link">
+        migrate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/process/" class="md-nav__link">
+        process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/processors/" class="md-nav__link">
+        processors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/qmd/" class="md-nav__link">
+        qmd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/quarto/" class="md-nav__link">
+        quarto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/release/" class="md-nav__link">
+        release
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/serve/" class="md-nav__link">
+        serve
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/showdoc/" class="md-nav__link">
+        showdoc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/sync/" class="md-nav__link">
+        sync
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/test/" class="md-nav__link">
+        test
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/clean/" class="md-nav__link">
+        nbdev.clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/cli/" class="md-nav__link">
+        nbdev.cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/config/" class="md-nav__link">
+        nbdev.config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/doclinks/" class="md-nav__link">
+        nbdev.doclinks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/export/" class="md-nav__link">
+        nbdev.export
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/extract_attachments/" class="md-nav__link">
+        nbdev.extract_attachments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/frontmatter/" class="md-nav__link">
+        nbdev.frontmatter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/imports/" class="md-nav__link">
+        nbdev.imports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/maker/" class="md-nav__link">
+        nbdev.maker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/merge/" class="md-nav__link">
+        nbdev.merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/migrate/" class="md-nav__link">
+        nbdev.migrate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/process/" class="md-nav__link">
+        nbdev.process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/processors/" class="md-nav__link">
+        nbdev.processors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/qmd/" class="md-nav__link">
+        nbdev.qmd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/quarto/" class="md-nav__link">
+        nbdev.quarto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/release/" class="md-nav__link">
+        nbdev.release
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/serve/" class="md-nav__link">
+        nbdev.serve
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/serve_drv/" class="md-nav__link">
+        nbdev.serve_drv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/showdoc/" class="md-nav__link">
+        nbdev.showdoc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/sync/" class="md-nav__link">
+        nbdev.sync
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_api/nbdev/test/" class="md-nav__link">
+        nbdev.test
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CLI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          CLI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_create_config/" class="md-nav__link">
+        nbdev_create_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_update/" class="md-nav__link">
+        nbdev_update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_export/" class="md-nav__link">
+        nbdev_export
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_fix/" class="md-nav__link">
+        nbdev_fix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_merge/" class="md-nav__link">
+        nbdev_merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_trust/" class="md-nav__link">
+        nbdev_trust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_clean/" class="md-nav__link">
+        nbdev_clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_install_hooks/" class="md-nav__link">
+        nbdev_install_hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_filter/" class="md-nav__link">
+        nbdev_filter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_sidebar/" class="md-nav__link">
+        nbdev_sidebar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_test/" class="md-nav__link">
+        nbdev_test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_new/" class="md-nav__link">
+        nbdev_new
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_migrate/" class="md-nav__link">
+        nbdev_migrate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_install_quarto/" class="md-nav__link">
+        nbdev_install_quarto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_install/" class="md-nav__link">
+        nbdev_install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_docs/" class="md-nav__link">
+        nbdev_docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_preview/" class="md-nav__link">
+        nbdev_preview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_prepare/" class="md-nav__link">
+        nbdev_prepare
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_readme/" class="md-nav__link">
+        nbdev_readme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_release_gh/" class="md-nav__link">
+        nbdev_release_gh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_release_git/" class="md-nav__link">
+        nbdev_release_git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_changelog/" class="md-nav__link">
+        nbdev_changelog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_pypi/" class="md-nav__link">
+        nbdev_pypi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_conda/" class="md-nav__link">
+        nbdev_conda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_release_both/" class="md-nav__link">
+        nbdev_release_both
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_bump_version/" class="md-nav__link">
+        nbdev_bump_version
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_proc_nbs/" class="md-nav__link">
+        nbdev_proc_nbs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nbdev_cli/nbdev_help/" class="md-nav__link">
+        nbdev_help
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Releases
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#239" class="md-nav__link">
+    2.3.9
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#238" class="md-nav__link">
+    2.3.8
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_1" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#237" class="md-nav__link">
+    2.3.7
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_2" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_2" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#234" class="md-nav__link">
+    2.3.4
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_3" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_3" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#233" class="md-nav__link">
+    2.3.3
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_4" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    2.3.2
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_5" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_4" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    2.3.1
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_5" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#230" class="md-nav__link">
+    2.3.0
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes_1" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features_6" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_6" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2210" class="md-nav__link">
+    2.2.10
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_7" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#229" class="md-nav__link">
+    2.2.9
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_7" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_8" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#227" class="md-nav__link">
+    2.2.7
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_8" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_9" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#226" class="md-nav__link">
+    2.2.6
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_9" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_10" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#220" class="md-nav__link">
+    2.2.0
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes_2" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features_10" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_11" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#216" class="md-nav__link">
+    2.1.6
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_11" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#214" class="md-nav__link">
+    2.1.4
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_12" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_12" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#239" class="md-nav__link">
+    2.3.9
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#238" class="md-nav__link">
+    2.3.8
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_1" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#237" class="md-nav__link">
+    2.3.7
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_2" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_2" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#234" class="md-nav__link">
+    2.3.4
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_3" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_3" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#233" class="md-nav__link">
+    2.3.3
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_4" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    2.3.2
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_5" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_4" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    2.3.1
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_5" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#230" class="md-nav__link">
+    2.3.0
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes_1" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features_6" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_6" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2210" class="md-nav__link">
+    2.2.10
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_7" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#229" class="md-nav__link">
+    2.2.9
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_7" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_8" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#227" class="md-nav__link">
+    2.2.7
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_8" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_9" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#226" class="md-nav__link">
+    2.2.6
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_9" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_10" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#220" class="md-nav__link">
+    2.2.0
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes_2" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features_10" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_11" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#216" class="md-nav__link">
+    2.1.6
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_11" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#214" class="md-nav__link">
+    2.1.4
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_12" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-squashed_12" class="md-nav__link">
+    Bugs Squashed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="release-notes">Release notes<a class="headerlink" href="#release-notes" title="Permanent link">¤</a></h1>
+<!-- do not remove -->
+
+<h2 id="239">2.3.9<a class="headerlink" href="#239" title="Permanent link">¤</a></h2>
+<h3 id="new-features">New Features<a class="headerlink" href="#new-features" title="Permanent link">¤</a></h3>
+<ul>
+<li>utility that creates a <code>requirements.txt</code> file from <code>settings.ini</code> (<a href="https://github.com/fastai/nbdev/pull/1202">#1202</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>user-friendly error if py file has <code># %%</code> comments with unexpected format (<a href="https://github.com/fastai/nbdev/pull/1211">#1211</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>add parameter for name to <code>nb_export</code> (<a href="https://github.com/fastai/nbdev/pull/1204">#1204</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>ensure newline at end of <code>_modidx.py</code> (<a href="https://github.com/fastai/nbdev/issues/1186">#1186</a>)</li>
+</ul>
+<h3 id="bugs-squashed">Bugs Squashed<a class="headerlink" href="#bugs-squashed" title="Permanent link">¤</a></h3>
+<ul>
+<li>end <code>sidebar.yml</code> with newline (<a href="https://github.com/fastai/nbdev/pull/1212">#1212</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>fix: incorrect regex pattern for setting <code>output-file</code> (<a href="https://github.com/fastai/nbdev/pull/1210">#1210</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>ensure newline at end of <code>_modidx.py</code> (<a href="https://github.com/fastai/nbdev/pull/1209">#1209</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>fix: <code>nbdev_install_quarto</code> may install and remove unrelated packages (<a href="https://github.com/fastai/nbdev/pull/1208">#1208</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>fix: key error if widgets is missing <code>state</code> (<a href="https://github.com/fastai/nbdev/pull/1207">#1207</a>), thanks to <a href="https://github.com/seeM">@seeM</a>
+-<code>nbdev_install_quarto</code> may install and remove unrelated packages (<a href="https://github.com/fastai/nbdev/issues/1182">#1182</a>)</li>
+<li>Key error if widgets is missing <code>state</code> (<a href="https://github.com/fastai/nbdev/issues/1167">#1167</a>)</li>
+</ul>
+<h2 id="238">2.3.8<a class="headerlink" href="#238" title="Permanent link">¤</a></h2>
+<h3 id="new-features_1">New Features<a class="headerlink" href="#new-features_1" title="Permanent link">¤</a></h3>
+<ul>
+<li>better error messages for <code>nbdev_migrate</code> (<a href="https://github.com/fastai/nbdev/issues/1177">#1177</a>)</li>
+<li>experimental: Users can provide extra processors via the <code>procs</code> key in <code>settings.ini</code> (<a href="https://github.com/fastai/nbdev/pull/1157">#1157</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>enable Documentation Only Sites With <code>nbdev</code> ( + tutorial ) (<a href="https://github.com/fastai/nbdev/pull/1121">#1121</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>support non-library projects (<a href="https://github.com/fastai/nbdev/issues/1119">#1119</a>)</li>
+<li>throw a warning when imports and code are mixed in a cell (<a href="https://github.com/fastai/nbdev/issues/714">#714</a>)</li>
+</ul>
+<h3 id="bugs-squashed_1">Bugs Squashed<a class="headerlink" href="#bugs-squashed_1" title="Permanent link">¤</a></h3>
+<ul>
+<li>fix duplicated sections in the sidebar (<a href="https://github.com/fastai/nbdev/pull/1165">#1165</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>setting <code>#| echo</code> in a cell with <code>show_doc</code> causes a Quarto error (<a href="https://github.com/fastai/nbdev/issues/1163">#1163</a>)</li>
+<li>fix copying of index assets (<a href="https://github.com/fastai/nbdev/pull/1143">#1143</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>images in index.ipynb causing deployments issues (<a href="https://github.com/fastai/nbdev/issues/1140">#1140</a>)</li>
+<li>clean takes forever on notebooks with large output (<a href="https://github.com/fastai/nbdev/issues/1132">#1132</a>)</li>
+<li><code>nbdev_update</code> includes folders starting with <code>_</code> or <code>.</code> (e.g. <code>.ipynb_checkpoints</code>) (<a href="https://github.com/fastai/nbdev/pull/1130">#1130</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>nbdev_new</code> defaults bool parameters to <code>False</code> (e.g. <code>put_version_in_init</code>) (<a href="https://github.com/fastai/nbdev/pull/1129">#1129</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>black_formatting</code> setting is ignored (<a href="https://github.com/fastai/nbdev/pull/1122">#1122</a>), thanks to <a href="https://github.com/jmoralez">@jmoralez</a></li>
+<li><code>nbdev_readme()</code> fails on the second run for the notebook with support files (e.g. Fig image). (<a href="https://github.com/fastai/nbdev/issues/1106">#1106</a>)</li>
+<li><code>nbdev_new</code> fails with <code>AttributeError: path_</code> (<a href="https://github.com/fastai/nbdev/issues/1063">#1063</a>)</li>
+<li>fix #1041 (<a href="https://github.com/fastai/nbdev/pull/1049">#1049</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+</ul>
+<h2 id="237">2.3.7<a class="headerlink" href="#237" title="Permanent link">¤</a></h2>
+<h3 id="new-features_2">New Features<a class="headerlink" href="#new-features_2" title="Permanent link">¤</a></h3>
+<ul>
+<li>Set recursive <code>True</code> by default (<a href="https://github.com/fastai/nbdev/pull/1117">#1117</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>exec_doc</code> supports re-rendering widgets (<a href="https://github.com/fastai/nbdev/pull/1113">#1113</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>If users update widgets with the <code>exec_doc</code> directive, the widget "view" is updated (in the cell output), but the old widget "state" is used (in notebook metadata). This refreshes widget state using <code>ipywidgets.Widget.get_manager_state</code>.</li>
+<li><code>nbdev_new</code> pins on major+minor version of <code>nbdev-template</code> (<a href="https://github.com/fastai/nbdev/issues/1091">#1091</a>)</li>
+<li><code>nbdev_proc_nbs</code> completes all steps to build <code>_proc</code> for publishing (<a href="https://github.com/fastai/nbdev/issues/1086">#1086</a>)</li>
+<li><code>nbdev_new</code> defaults <code>nbs_path</code> setting to <code>'nbs'</code> (<a href="https://github.com/fastai/nbdev/issues/1083">#1083</a>)</li>
+<li>Since all website files (quarto config, css, images, etc) are in <code>nbs_path</code>, the current default <code>nbs_path='.'</code> can clutter the root folder.</li>
+<li><code>nbdev_new</code> queries <code>branch</code> from GitHub (<a href="https://github.com/fastai/nbdev/issues/1080">#1080</a>)</li>
+</ul>
+<h3 id="bugs-squashed_2">Bugs Squashed<a class="headerlink" href="#bugs-squashed_2" title="Permanent link">¤</a></h3>
+<ul>
+<li>fix exporting <code>patch_to</code> which is decorated with <code>staticmethod</code> (<a href="https://github.com/fastai/nbdev/pull/1100">#1100</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>show_doc</code> errors if a dependency in the <code>nbdev</code> group has a sub-dependency that isn't installed (<a href="https://github.com/fastai/nbdev/issues/1097">#1097</a>)</li>
+<li>Running <code>nbdev_migrate</code> while upgrading removes nbdev2 compatible directives (<a href="https://github.com/fastai/nbdev/issues/1089">#1089</a>)</li>
+<li>respect <code>#|hide</code> and <code>#|include: false</code> for showdoc (<a href="https://github.com/fastai/nbdev/pull/1079">#1079</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Export class to library but hide from documentation (<a href="https://github.com/fastai/nbdev/issues/1076">#1076</a>)</li>
+<li><code>nbdev_clean</code> removes widget state (<a href="https://github.com/fastai/nbdev/issues/1069">#1069</a>)</li>
+<li>If widget state is present, it means the user had intentionally changed settings in their notebook editor.</li>
+</ul>
+<h2 id="234">2.3.4<a class="headerlink" href="#234" title="Permanent link">¤</a></h2>
+<h3 id="new-features_3">New Features<a class="headerlink" href="#new-features_3" title="Permanent link">¤</a></h3>
+<ul>
+<li>improve jekyll migration (<a href="https://github.com/fastai/nbdev/pull/1078">#1078</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+</ul>
+<h3 id="bugs-squashed_3">Bugs Squashed<a class="headerlink" href="#bugs-squashed_3" title="Permanent link">¤</a></h3>
+<ul>
+<li>skip <code>_docs</code> and <code>_site</code> in processing (<a href="https://github.com/fastai/nbdev/issues/1085">#1085</a>)</li>
+<li>fix alias bug (<a href="https://github.com/fastai/nbdev/pull/1075">#1075</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+</ul>
+<h2 id="233">2.3.3<a class="headerlink" href="#233" title="Permanent link">¤</a></h2>
+<h3 id="new-features_4">New Features<a class="headerlink" href="#new-features_4" title="Permanent link">¤</a></h3>
+<ul>
+<li>auto-upgrade <code>_quarto.yml</code> for v1.2 (<a href="https://github.com/fastai/nbdev/issues/1073">#1073</a>)</li>
+<li>Add Blog Tutorial (<a href="https://github.com/fastai/nbdev/pull/1061">#1061</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+</ul>
+<h2 id="232">2.3.2<a class="headerlink" href="#232" title="Permanent link">¤</a></h2>
+<h3 id="new-features_5">New Features<a class="headerlink" href="#new-features_5" title="Permanent link">¤</a></h3>
+<ul>
+<li>Support GitHub Enterprise (<a href="https://github.com/fastai/nbdev/issues/944">#944</a>)</li>
+</ul>
+<h3 id="bugs-squashed_4">Bugs Squashed<a class="headerlink" href="#bugs-squashed_4" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>nbdev_new</code> fails with <code>AttributeError: path_</code> (<a href="https://github.com/fastai/nbdev/issues/1063">#1063</a>)</li>
+</ul>
+<h2 id="231">2.3.1<a class="headerlink" href="#231" title="Permanent link">¤</a></h2>
+<h3 id="breaking-changes">Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>_quarto.yml</code> no longer replaced with automatically generated version (<a href="https://github.com/fastai/nbdev/issues/1059">#1059</a>)</li>
+<li>This was listed in 2.3.0 but wasn't actually included in the release</li>
+</ul>
+<h3 id="bugs-squashed_5">Bugs Squashed<a class="headerlink" href="#bugs-squashed_5" title="Permanent link">¤</a></h3>
+<ul>
+<li>fix <code>nbdev_update</code> (<a href="https://github.com/fastai/nbdev/pull/1058">#1058</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>fix bug in <code>nbdev.maker.update_import</code> which meant that <code>nbdev_update</code> didn't convert relative imports without <code>None</code> module (e.g <code>from . import foo</code> -&gt; <code>from pkg import foo</code>)</li>
+<li>fix <code>FileNotFoundError</code> in <code>nbdev_update</code> by passing the correct py module and corresponding notebook paths</li>
+<li>fix <code>nbdev_update</code> introducing whitespace changes to notebooks</li>
+</ul>
+<h2 id="230">2.3.0<a class="headerlink" href="#230" title="Permanent link">¤</a></h2>
+<h3 id="breaking-changes_1">Breaking Changes<a class="headerlink" href="#breaking-changes_1" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>_quarto.yml</code> no longer replaced with automatically generated version</li>
+<li>You can now customise your <code>_quarto.yml</code> file and it will not be overridden by nbdev</li>
+<li>This means that <code>custom_host</code> and <code>custom_port</code> in <code>settings.ini</code> are no longer supported -- use the standard quarto configuration instead</li>
+<li>Parallel ipynb filter (<a href="https://github.com/fastai/nbdev/issues/961">#961</a>)</li>
+<li><code>ipynb-filters</code> in <code>_quarto.yml</code> is no longer needed or recommended. Instead, nbdev preprocesses your notebooks in parallel into a folder called <code>_proc</code> before calling quarto</li>
+<li>The new processing system generally results in speedups of around 10x compared to the previous approach</li>
+<li>Deprecate <code>config_key</code> in favor of <code>get_config</code> (<a href="https://github.com/fastai/nbdev/pull/856">#856</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+</ul>
+<h3 id="new-features_6">New Features<a class="headerlink" href="#new-features_6" title="Permanent link">¤</a></h3>
+<ul>
+<li>Setting <code>put_version_in_init</code> to make adding <code>__version__</code> to <code>__init__.py</code> optional (<a href="https://github.com/fastai/nbdev/pull/1051">#1051</a>), thanks to <a href="https://github.com/MichaelJFishmanBA">@MichaelJFishmanBA</a></li>
+<li><code>nbdev_new</code> support for GitHub Enterprise (<a href="https://github.com/fastai/nbdev/pull/1043">#1043</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Use <code>GITHUB_TOKEN</code> if present for <code>nbdev.release</code> (<a href="https://github.com/fastai/nbdev/issues/1025">#1025</a>)</li>
+<li>Support non qmd py rendering scripts (<a href="https://github.com/fastai/nbdev/issues/1014">#1014</a>)</li>
+<li>Use penultimate suffix for extension of rendered .py scripts (<a href="https://github.com/fastai/nbdev/issues/1010">#1010</a>)</li>
+<li>Print <code>nbdev_test</code> cell errors to stderr instead of using <code>logging.warning</code> (<a href="https://github.com/fastai/nbdev/issues/1003">#1003</a>)</li>
+<li>Make nb meta <code>display_name</code> consistent with <code>name</code> to simplify diffs (<a href="https://github.com/fastai/nbdev/issues/995">#995</a>)</li>
+<li>Windows support for clean nb (<a href="https://github.com/fastai/nbdev/pull/989">#989</a>), thanks to <a href="https://github.com/jvanelteren">@jvanelteren</a></li>
+<li>Preview support for parallel filter (<a href="https://github.com/fastai/nbdev/issues/976">#976</a>)</li>
+<li>Settings.ini option for choosing preview listen port (<a href="https://github.com/fastai/nbdev/issues/967">#967</a>)</li>
+<li>Vscode extension for nbdev which cleans notebooks (<a href="https://github.com/fastai/nbdev/issues/952">#952</a>)</li>
+<li>Authenticate nbdev-template github API call (<a href="https://github.com/fastai/nbdev/issues/940">#940</a>)</li>
+<li>Add <code>printit</code> arg to <code>nbdev_filter</code> so it can be called with <code>fname</code> and still print to stdout (<a href="https://github.com/fastai/nbdev/pull/931">#931</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Run <code>nbdev_readme</code> in <code>nbdev_new</code> (<a href="https://github.com/fastai/nbdev/pull/919">#919</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Improve config documentation in <code>read</code> module (<a href="https://github.com/fastai/nbdev/pull/864">#864</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Simplify <code>jupyter_hooks</code> configuration (<a href="https://github.com/fastai/nbdev/pull/780">#780</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+</ul>
+<h3 id="bugs-squashed_6">Bugs Squashed<a class="headerlink" href="#bugs-squashed_6" title="Permanent link">¤</a></h3>
+<ul>
+<li>Class method doclinks target <code>mod.html#method</code> instead of <code>mod.html#class.method</code> (<a href="https://github.com/fastai/nbdev/pull/1046">#1046</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>"Bad credentials" error in <code>nbdev_new</code> if GitHub Enterprise <code>GH_HOST</code> and <code>GITHUB_TOKEN</code> are used (<a href="https://github.com/fastai/nbdev/issues/1038">#1038</a>)</li>
+<li>Suppress <code>UserWarning</code> for unset <code>GITHUB_TOKEN</code> in <code>nbdev_new</code> (<a href="https://github.com/fastai/nbdev/pull/1028">#1028</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>nbdev.release</code> uses <code>cfg.lib_name</code> instead of <code>cfg.repo</code> (<a href="https://github.com/fastai/nbdev/pull/1024">#1024</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>nbdev_test</code> does not restore the original working directory (<a href="https://github.com/fastai/nbdev/issues/1004">#1004</a>)</li>
+<li><code>clean_ids</code> corrupts string outputs (<a href="https://github.com/fastai/nbdev/pull/794">#794</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+</ul>
+<h2 id="2210">2.2.10<a class="headerlink" href="#2210" title="Permanent link">¤</a></h2>
+<h3 id="bugs-squashed_7">Bugs Squashed<a class="headerlink" href="#bugs-squashed_7" title="Permanent link">¤</a></h3>
+<ul>
+<li>missing <code>doc_path.name</code> in <code>_docs</code> move (<a href="https://github.com/fastai/nbdev/issues/973">#973</a>)</li>
+</ul>
+<h2 id="229">2.2.9<a class="headerlink" href="#229" title="Permanent link">¤</a></h2>
+<h3 id="new-features_7">New Features<a class="headerlink" href="#new-features_7" title="Permanent link">¤</a></h3>
+<ul>
+<li>Experimental: pre-commit hooks (<a href="https://github.com/fastai/nbdev/pull/959">#959</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>setup GitHub repo automatically (<a href="https://github.com/fastai/nbdev/pull/955">#955</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Authenticate nbdev-template github API call (<a href="https://github.com/fastai/nbdev/issues/940">#940</a>)</li>
+<li>Support module level docstrings (<a href="https://github.com/fastai/nbdev/issues/473">#473</a>)</li>
+</ul>
+<h3 id="bugs-squashed_8">Bugs Squashed<a class="headerlink" href="#bugs-squashed_8" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>show_doc</code> includes parsed sections from numpy docstrings (<a href="https://github.com/fastai/nbdev/issues/964">#964</a>)</li>
+<li><code>AnnAssign</code> object has no attribute 'targets' (<a href="https://github.com/fastai/nbdev/issues/953">#953</a>)</li>
+<li>Exported images not found in docs (<a href="https://github.com/fastai/nbdev/issues/951">#951</a>)</li>
+<li>fix #769 (<a href="https://github.com/fastai/nbdev/pull/946">#946</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li><code>recursive</code> in settings.ini ignored (<a href="https://github.com/fastai/nbdev/issues/942">#942</a>)</li>
+<li>Wrong source link when using @patch (<a href="https://github.com/fastai/nbdev/issues/939">#939</a>)</li>
+<li>Deploy Action fails with <code>ModuleNotFoundError: No module named 'https://github'</code> (<a href="https://github.com/fastai/nbdev/issues/936">#936</a>)</li>
+<li>Recursive mode doesn't seem to work when running <code>nbdev_preview</code> (<a href="https://github.com/fastai/nbdev/issues/935">#935</a>)</li>
+<li>Update All Python Scripts to nbs similar to <code>nbdev_update_lib</code> in v1 (<a href="https://github.com/fastai/nbdev/issues/769">#769</a>)</li>
+</ul>
+<h2 id="227">2.2.7<a class="headerlink" href="#227" title="Permanent link">¤</a></h2>
+<h3 id="new-features_8">New Features<a class="headerlink" href="#new-features_8" title="Permanent link">¤</a></h3>
+<ul>
+<li>Add <code>printit</code> arg to <code>nbdev_filter</code> so it can be called with <code>fname</code> and still print to stdout (<a href="https://github.com/fastai/nbdev/pull/931">#931</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Run <code>nbdev_readme</code> in <code>nbdev_new</code> (<a href="https://github.com/fastai/nbdev/pull/919">#919</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>In <code>nbdev_prepare()</code> auto render README if needed (<a href="https://github.com/fastai/nbdev/issues/913">#913</a>)</li>
+<li>Filter keys stored in modidx settings (<a href="https://github.com/fastai/nbdev/issues/903">#903</a>)</li>
+<li>Regression: reintroduce <code>[source]</code> link (<a href="https://github.com/fastai/nbdev/issues/692">#692</a>)</li>
+</ul>
+<h3 id="bugs-squashed_9">Bugs Squashed<a class="headerlink" href="#bugs-squashed_9" title="Permanent link">¤</a></h3>
+<ul>
+<li>Deploy Action fails with <code>ModuleNotFoundError: No module named 'https://github'</code> (<a href="https://github.com/fastai/nbdev/issues/936">#936</a>)</li>
+<li>Correct cell index in <code>nbdev_update</code> (<a href="https://github.com/fastai/nbdev/pull/934">#934</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Handle repo names with dashes and correct index page rendering with file attachments (<a href="https://github.com/fastai/nbdev/pull/930">#930</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li><code>IPython.display.Image(embed=True)</code> results in incorrect image reference in GitHub Pages (<a href="https://github.com/fastai/nbdev/issues/924">#924</a>)</li>
+<li><code>nbdev_preview</code> not starting if there is a folder with no notebook in it (<a href="https://github.com/fastai/nbdev/issues/922">#922</a>)</li>
+<li>Fix images (<a href="https://github.com/fastai/nbdev/pull/918">#918</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>nbdev_update</code> creates a new cell, instead of updating the original code (<a href="https://github.com/fastai/nbdev/issues/775">#775</a>)</li>
+</ul>
+<h2 id="226">2.2.6<a class="headerlink" href="#226" title="Permanent link">¤</a></h2>
+<h3 id="new-features_9">New Features<a class="headerlink" href="#new-features_9" title="Permanent link">¤</a></h3>
+<ul>
+<li>Build <code>_modidx.py</code> on demand in order to git conflicts (<a href="https://github.com/fastai/nbdev/issues/911">#911</a>)</li>
+<li>Add source link to index (<a href="https://github.com/fastai/nbdev/issues/909">#909</a>)</li>
+<li>Order left navigation sections using numeric prefix (<a href="https://github.com/fastai/nbdev/issues/901">#901</a>)</li>
+<li>Automatic rendering of python files with frontmatter (<a href="https://github.com/fastai/nbdev/issues/895">#895</a>)</li>
+</ul>
+<h3 id="bugs-squashed_10">Bugs Squashed<a class="headerlink" href="#bugs-squashed_10" title="Permanent link">¤</a></h3>
+<ul>
+<li>Make sure <code>#|exec_doc</code> triggers an update even when there is no export or show_doc (<a href="https://github.com/fastai/nbdev/pull/906">#906</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>allow nbdev directives to work with cell magic (<a href="https://github.com/fastai/nbdev/pull/905">#905</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+</ul>
+<h2 id="220">2.2.0<a class="headerlink" href="#220" title="Permanent link">¤</a></h2>
+<h3 id="breaking-changes_2">Breaking Changes<a class="headerlink" href="#breaking-changes_2" title="Permanent link">¤</a></h3>
+<ul>
+<li>Combine preprocs and postprocs into new <code>Processor</code> class (<a href="https://github.com/fastai/nbdev/issues/874">#874</a>)</li>
+<li>Rename <code>nbdev.read</code> to <code>nbdev.config</code> (<a href="https://github.com/fastai/nbdev/issues/879">#879</a>)</li>
+<li>Use H3 for functions and properties, instead of H4 (<a href="https://github.com/fastai/nbdev/issues/875">#875</a>)</li>
+<li>Remove <code>nbflags</code> directive (<a href="https://github.com/fastai/nbdev/issues/871">#871</a>)</li>
+<li>Deprecate <code>config_key</code> in favor of <code>get_config</code> (<a href="https://github.com/fastai/nbdev/pull/856">#856</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+</ul>
+<h3 id="new-features_10">New Features<a class="headerlink" href="#new-features_10" title="Permanent link">¤</a></h3>
+<ul>
+<li>Add simple qmd generation functions in <code>nbdev.qmd</code> (<a href="https://github.com/fastai/nbdev/issues/893">#893</a>)</li>
+<li>Add <code>FrontmatterProc</code> (<a href="https://github.com/fastai/nbdev/issues/890">#890</a>)</li>
+<li>Improvements to <code>nbdev_new</code> and <code>nbdev_create_config</code> (<a href="https://github.com/fastai/nbdev/pull/878">#878</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>nbdev_create_config</code> infers settings from git/GitHub, prompts for missing settings, and renders the settings file with commented sections</li>
+<li><code>nbdev_new</code> uses <code>nbdev_create_config</code> instead of a file provided by <code>nbdev-template</code>, which means it'll benefit from future improvements to <code>nbdev_create_config</code> as well as always using latest defaults</li>
+<li>Add frontmatter bullet point processor (<a href="https://github.com/fastai/nbdev/issues/873">#873</a>)</li>
+<li>Allow specifying port for preview (<a href="https://github.com/fastai/nbdev/pull/872">#872</a>), thanks to <a href="https://github.com/dleen">@dleen</a></li>
+<li><code>nbdev_new</code> renders notebooks with information from your config file (<a href="https://github.com/fastai/nbdev/pull/866">#866</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Improve config documentation in <code>read</code> module (<a href="https://github.com/fastai/nbdev/pull/864">#864</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Install quarto without root access (<a href="https://github.com/fastai/nbdev/issues/860">#860</a>)</li>
+<li>Explain more detail during quarto installation process (<a href="https://github.com/fastai/nbdev/issues/859">#859</a>)</li>
+<li>Automatically maintain <code>__version__</code> in <code>__init__.py</code> (<a href="https://github.com/fastai/nbdev/issues/854">#854</a>)</li>
+<li>Prettify output for <code>nbdev_test</code> (<a href="https://github.com/fastai/nbdev/pull/849">#849</a>), thanks to <a href="https://github.com/deven367">@deven367</a></li>
+<li>Ignore .ipynb_checkpoints folder in module dir (<a href="https://github.com/fastai/nbdev/pull/848">#848</a>), thanks to <a href="https://github.com/dleen">@dleen</a></li>
+<li>Escape Footnotes from Docments Table (<a href="https://github.com/fastai/nbdev/pull/847">#847</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Include filename in <code>nbdev_export</code> warning when nbdev1 syntax is used (<a href="https://github.com/fastai/nbdev/pull/838">#838</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Show title if nbdev_filter errors (<a href="https://github.com/fastai/nbdev/pull/828">#828</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Added "topics" to match GitHub's terminology (<a href="https://github.com/fastai/nbdev/pull/817">#817</a>), thanks to <a href="https://github.com/tylere">@tylere</a></li>
+<li>Accelerate <code>quarto preview</code> (<a href="https://github.com/fastai/nbdev/issues/748">#748</a>)</li>
+<li>Throw a warning when imports and code are mixed in a cell (<a href="https://github.com/fastai/nbdev/issues/714">#714</a>)</li>
+<li>Make conda release work for anyone (<a href="https://github.com/fastai/nbdev/issues/653">#653</a>)</li>
+</ul>
+<h3 id="bugs-squashed_11">Bugs Squashed<a class="headerlink" href="#bugs-squashed_11" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>_all_</code> works for strings but not objects in py3.7 (<a href="https://github.com/fastai/nbdev/issues/870">#870</a>)</li>
+<li><code>show_doc</code> <code>title_level</code> argument has no effect (<a href="https://github.com/fastai/nbdev/issues/869">#869</a>)</li>
+<li><code>show_doc</code> sometimes does not show wrapped functions correctly (<a href="https://github.com/fastai/nbdev/issues/863">#863</a>)</li>
+<li><code>show_doc</code> treats functions decorated with <code>lru_cache</code> as classes (<a href="https://github.com/fastai/nbdev/pull/862">#862</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Fix <code>show_doc</code> signature whitespace removal (<a href="https://github.com/fastai/nbdev/pull/855">#855</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>nbdev_new</code> doesn't infer anything if no gitconfig (<a href="https://github.com/fastai/nbdev/issues/846">#846</a>)</li>
+<li><code>show_doc</code> paremeter default may render as footnote (<a href="https://github.com/fastai/nbdev/issues/796">#796</a>)</li>
+<li>Conda description is empty (<a href="https://github.com/fastai/nbdev/issues/745">#745</a>)</li>
+</ul>
+<h2 id="216">2.1.6<a class="headerlink" href="#216" title="Permanent link">¤</a></h2>
+<h3 id="new-features_11">New Features<a class="headerlink" href="#new-features_11" title="Permanent link">¤</a></h3>
+<ul>
+<li>add <code>nbdev_conda</code> to create and upload conda packages (<a href="https://github.com/fastai/nbdev/issues/850">#850</a>)</li>
+</ul>
+<h2 id="214">2.1.4<a class="headerlink" href="#214" title="Permanent link">¤</a></h2>
+<h3 id="new-features_12">New Features<a class="headerlink" href="#new-features_12" title="Permanent link">¤</a></h3>
+<ul>
+<li>Add <code>custom_quarto_yml</code> setting (<a href="https://github.com/fastai/nbdev/pull/842">#842</a>), thanks to <a href="https://github.com/benoit-cty">@benoit-cty</a></li>
+<li>Display multiline docstrings (<a href="https://github.com/fastai/nbdev/issues/841">#841</a>)</li>
+<li>Include filename in <code>nbdev_export</code> warning when nbdev1 syntax is used (<a href="https://github.com/fastai/nbdev/issues/835">#835</a>)</li>
+<li>Streamline <code>nbdev_new</code>: outputs are now in color, you can pass <code>--lib_name</code>, and it calls <code>nbdev_export</code> (<a href="https://github.com/fastai/nbdev/pull/820">#820</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>A command for uploading to the test pypi server (<a href="https://github.com/fastai/nbdev/pull/818">#818</a>), thanks to <a href="https://github.com/tourdownunder">@tourdownunder</a></li>
+<li>Include notebook title in <code>nbdev_preview</code> error message (<a href="https://github.com/fastai/nbdev/issues/802">#802</a>)</li>
+<li>Migrate collapsible code cell directives (<a href="https://github.com/fastai/nbdev/pull/783">#783</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Simplify <code>jupyter_hooks</code> configuration (<a href="https://github.com/fastai/nbdev/pull/780">#780</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Support <code>nbdev_install_hooks</code> in  non-nbdev repos (<a href="https://github.com/fastai/nbdev/pull/779">#779</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Allow users to provide user-level settings in ~/.config/nbdev/settings.ini (<a href="https://github.com/fastai/nbdev/pull/778">#778</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Support <code>nbdev_install_hooks</code> in  non-nbdev repos (<a href="https://github.com/fastai/nbdev/issues/777">#777</a>)</li>
+<li>Port <code>doc()</code> from nbdev1 (<a href="https://github.com/fastai/nbdev/issues/772">#772</a>)</li>
+<li>Make <code>show_doc</code> for function parameter defaults concise and deterministic (<a href="https://github.com/fastai/nbdev/issues/771">#771</a>)</li>
+<li>Clean <code>id</code> from text <code>repr</code> outputs to further avoid git merge conflicts (<a href="https://github.com/fastai/nbdev/issues/749">#749</a>)</li>
+<li>Add repo root to sys path on exec (<a href="https://github.com/fastai/nbdev/issues/735">#735</a>)</li>
+<li>Use frontmatter <code>eval</code> and <code>showdoc</code> for controlling notebook execution (<a href="https://github.com/fastai/nbdev/issues/734">#734</a>)</li>
+</ul>
+<h3 id="bugs-squashed_12">Bugs Squashed<a class="headerlink" href="#bugs-squashed_12" title="Permanent link">¤</a></h3>
+<ul>
+<li>
+<h1 id="exports-directive-does-not-show-source-code-in-the-docs-822">|exports directive does not show source code in the docs (<a href="https://github.com/fastai/nbdev/issues/822">#822</a>)<a class="headerlink" href="#exports-directive-does-not-show-source-code-in-the-docs-822" title="Permanent link">¤</a></h1>
+</li>
+<li>nbdev commands fail when <code>doc_path</code> contains whitespace (<a href="https://github.com/fastai/nbdev/pull/813">#813</a>), thanks to <a href="https://github.com/mone27">@mone27</a></li>
+<li><code>show_doc</code> html renderer is incorrectly formatted (<a href="https://github.com/fastai/nbdev/issues/808">#808</a>)</li>
+<li><code>show_doc</code> cell output is incorrectly styled (<a href="https://github.com/fastai/nbdev/issues/807">#807</a>)</li>
+<li>links aren't rendered as code (<a href="https://github.com/fastai/nbdev/pull/795">#795</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>clean_ids</code> corrupts string outputs (<a href="https://github.com/fastai/nbdev/pull/794">#794</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>quarto frontmatter is removed (<a href="https://github.com/fastai/nbdev/issues/789">#789</a>)</li>
+<li><code>nbdev_merge</code> fails on <code>git stash pop</code> conflict (<a href="https://github.com/fastai/nbdev/pull/787">#787</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Hooks search Jupyter start directory instead of notebook directory for settings file (<a href="https://github.com/fastai/nbdev/pull/784">#784</a>), thanks to <a href="https://github.com/dleen">@dleen</a></li>
+<li>Allow for dash in Quarto directives (<a href="https://github.com/fastai/nbdev/pull/782">#782</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Fix directive migration when there is no test flag (<a href="https://github.com/fastai/nbdev/pull/781">#781</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li><code>nbdev_prepare</code> throws BrokenProcessPool error on MacOS (<a href="https://github.com/fastai/nbdev/issues/731">#731</a>)</li>
+<li>settings.ini not inferred by <code>nbdev_new</code> on newly cloned repo on MacOS (<a href="https://github.com/fastai/nbdev/issues/710">#710</a>)</li>
+</ul>
+<h2 id="212">2.1.2<a class="headerlink" href="#212" title="Permanent link">¤</a></h2>
+<h3 id="new-features_13">New Features<a class="headerlink" href="#new-features_13" title="Permanent link">¤</a></h3>
+<ul>
+<li>use global defaults instead of respecifying each time (<a href="https://github.com/fastai/nbdev/pull/770">#770</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>get_config</code> works without a settings file (<a href="https://github.com/fastai/nbdev/pull/768">#768</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>add site url (<a href="https://github.com/fastai/nbdev/pull/767">#767</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>add <code>show_src</code> to display rich source code (<a href="https://github.com/fastai/nbdev/pull/763">#763</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>add support for <code>#|exports</code> (<a href="https://github.com/fastai/nbdev/issues/762">#762</a>)</li>
+<li><code>nbdev_merge</code> prints info like <code>git merge</code> (<a href="https://github.com/fastai/nbdev/issues/753">#753</a>)</li>
+<li>helpers to convert fp front matter to quarto front matter (<a href="https://github.com/fastai/nbdev/pull/750">#750</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Streamline default settings (<a href="https://github.com/fastai/nbdev/issues/747">#747</a>)</li>
+<li>Config keys (and their defaults) should all be documented in one place</li>
+<li>add <code>user</code> option to <code>jupyter_hooks</code> setting (<a href="https://github.com/fastai/nbdev/pull/738">#738</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Add appropriate <code>output-file</code> to existing frontmatter (<a href="https://github.com/fastai/nbdev/issues/728">#728</a>)</li>
+</ul>
+<h3 id="bugs-squashed_13">Bugs Squashed<a class="headerlink" href="#bugs-squashed_13" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>nbdev_prepare</code> sometimes throws BrokenProcessPool error on MacOS (<a href="https://github.com/fastai/nbdev/issues/731">#731</a>)</li>
+<li>Incorrect relative import from package root inside nested module (<a href="https://github.com/fastai/nbdev/issues/773">#773</a>)</li>
+<li>Jupyter hooks break in environments without <code>nbdev</code> installed (<a href="https://github.com/fastai/nbdev/issues/760">#760</a>)</li>
+<li><code>nbdev_fix</code> breaks with empty <code>ours</code> patch (<a href="https://github.com/fastai/nbdev/issues/752">#752</a>)</li>
+<li>fix <code>nbdev_merge</code> during rebase; fix <code>nbdev_fix</code> <code>nobackup</code> default (<a href="https://github.com/fastai/nbdev/pull/737">#737</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>non-notebooks do not have nbformat field (<a href="https://github.com/fastai/nbdev/pull/732">#732</a>), thanks to <a href="https://github.com/dleen">@dleen</a></li>
+</ul>
+<h2 id="211">2.1.1<a class="headerlink" href="#211" title="Permanent link">¤</a></h2>
+<h3 id="new-features_14">New Features<a class="headerlink" href="#new-features_14" title="Permanent link">¤</a></h3>
+<ul>
+<li>add tools from fastrelease to nbdev (<a href="https://github.com/fastai/nbdev/issues/733">#733</a>)</li>
+</ul>
+<h3 id="bugs-squashed_14">Bugs Squashed<a class="headerlink" href="#bugs-squashed_14" title="Permanent link">¤</a></h3>
+<ul>
+<li>fix <code>nbdev_test</code> with no <code>--fname</code> in non-nbdev repos (<a href="https://github.com/fastai/nbdev/pull/730">#730</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Auto-generated showdoc headers not in ToC (<a href="https://github.com/fastai/nbdev/issues/703">#703</a>)</li>
+</ul>
+<h2 id="210">2.1.0<a class="headerlink" href="#210" title="Permanent link">¤</a></h2>
+<h3 id="breaking-changes_3">Breaking Changes<a class="headerlink" href="#breaking-changes_3" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>nbdev_sidebar</code> now looks for <code>.qmd</code> files instead of <code>.md</code> files</li>
+</ul>
+<h3 id="new-features_15">New Features<a class="headerlink" href="#new-features_15" title="Permanent link">¤</a></h3>
+<ul>
+<li>automatically add <code>output:asis</code> for showdoc cells (<a href="https://github.com/fastai/nbdev/issues/726">#726</a>)</li>
+<li>accelerate <code>nbdev_readme</code> (<a href="https://github.com/fastai/nbdev/issues/715">#715</a>)</li>
+<li>deterministic <code>show_doc</code> and <code>DocmentTbl</code> <code>repr</code> (<a href="https://github.com/fastai/nbdev/pull/707">#707</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+</ul>
+<h3 id="bugs-squashed_15">Bugs Squashed<a class="headerlink" href="#bugs-squashed_15" title="Permanent link">¤</a></h3>
+<ul>
+<li>KeyError 'repo' when trying to create a new nbdev project with <code>nbdev_new</code> (<a href="https://github.com/fastai/nbdev/issues/720">#720</a>)</li>
+<li><code>show_doc</code> ends the details column at any <code>|</code> character (<a href="https://github.com/fastai/nbdev/issues/712">#712</a>)</li>
+<li>only add to <code>.gitattributes</code> if missing (<a href="https://github.com/fastai/nbdev/pull/706">#706</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+</ul>
+<h2 id="207">2.0.7<a class="headerlink" href="#207" title="Permanent link">¤</a></h2>
+<h3 id="new-features_16">New Features<a class="headerlink" href="#new-features_16" title="Permanent link">¤</a></h3>
+<ul>
+<li>git merge hooks: automatically resolve conflicts and render markers as separate cells (<a href="https://github.com/fastai/nbdev/pull/704">#704</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>Allow clean to keep some metadata keys (<a href="https://github.com/fastai/nbdev/pull/672">#672</a>), thanks to <a href="https://github.com/dleen">@dleen</a></li>
+<li>enable mac terminal install instead of visual installer (<a href="https://github.com/fastai/nbdev/pull/705">#705</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Conditional content for markdown vs HTML for README (<a href="https://github.com/fastai/nbdev/pull/694">#694</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Export a single module (<a href="https://github.com/fastai/nbdev/issues/652">#652</a>)</li>
+</ul>
+<h3 id="bugs-squashed_16">Bugs Squashed<a class="headerlink" href="#bugs-squashed_16" title="Permanent link">¤</a></h3>
+<ul>
+<li>Re-enable Mac CI <a href="https://github.com/fastai/nbdev/issues/425">#425</a>)</li>
+</ul>
+<h2 id="206">2.0.6<a class="headerlink" href="#206" title="Permanent link">¤</a></h2>
+<h3 id="new-features_17">New Features<a class="headerlink" href="#new-features_17" title="Permanent link">¤</a></h3>
+<ul>
+<li>new jupyter save hook to clean NBs (<a href="https://github.com/fastai/nbdev/issues/697">#697</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li>new directive <code>exec_doc</code> to auto-exec cell when building docs (<a href="https://github.com/fastai/nbdev/issues/699">#699</a>)</li>
+<li>automatically escape YAML strings for title and description in frontmatter (<a href="https://github.com/fastai/nbdev/issues/691">#691</a>)</li>
+<li>add <code>unbump</code> param to <code>nbdev_bump_version</code> (<a href="https://github.com/fastai/nbdev/issues/689">#689</a>)</li>
+<li>install ghapi automatically (<a href="https://github.com/fastai/nbdev/issues/690">#690</a>)</li>
+</ul>
+<h2 id="205">2.0.5<a class="headerlink" href="#205" title="Permanent link">¤</a></h2>
+<h3 id="new-features_18">New Features<a class="headerlink" href="#new-features_18" title="Permanent link">¤</a></h3>
+<ul>
+<li>add <code>nbdev_readme</code> (<a href="https://github.com/fastai/nbdev/issues/688">#688</a>)</li>
+</ul>
+<h2 id="204">2.0.4<a class="headerlink" href="#204" title="Permanent link">¤</a></h2>
+<h3 id="new-features_19">New Features<a class="headerlink" href="#new-features_19" title="Permanent link">¤</a></h3>
+<ul>
+<li>add <code>readme_nb</code> config option (<a href="https://github.com/fastai/nbdev/issues/668">#668</a>)</li>
+</ul>
+<h3 id="bugs-squashed_17">Bugs Squashed<a class="headerlink" href="#bugs-squashed_17" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>exporti</code> cells can cause showdocs exec to fail (<a href="https://github.com/fastai/nbdev/issues/679">#679</a>)</li>
+<li>missing .html suffix in links (<a href="https://github.com/fastai/nbdev/issues/674">#674</a>)</li>
+<li>Add early return (<a href="https://github.com/fastai/nbdev/pull/670">#670</a>), thanks to <a href="https://github.com/dleen">@dleen</a></li>
+</ul>
+<h2 id="200">2.0.0<a class="headerlink" href="#200" title="Permanent link">¤</a></h2>
+<ul>
+<li>From-scratch rewrite of nbdev! nbdev now uses <a href="https://quarto.org/">Quarto</a> to create beautiful and full-featured websites</li>
+<li>nbdev2 is much faster than previous versions</li>
+<li>Note that you should run <code>nbdev_migrate_directives</code> after upgrading to use the new comment directive format (e.g <code>#| export</code> instead of <code>#export</code>)</li>
+</ul>
+<h2 id="1211">1.2.11<a class="headerlink" href="#1211" title="Permanent link">¤</a></h2>
+<h3 id="new-features_20">New Features<a class="headerlink" href="#new-features_20" title="Permanent link">¤</a></h3>
+<ul>
+<li>support py310 style union annotations (<a href="https://github.com/fastai/nbdev/pull/636">#636</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+</ul>
+<h3 id="bugs-squashed_18">Bugs Squashed<a class="headerlink" href="#bugs-squashed_18" title="Permanent link">¤</a></h3>
+<ul>
+<li>fix <code>show_doc</code> for properties (<a href="https://github.com/fastai/nbdev/pull/635">#635</a>), thanks to <a href="https://github.com/seeM">@seeM</a></li>
+<li><code>nbdev_nb2md</code> throws error when called in a notebook (<a href="https://github.com/fastai/nbdev/issues/381">#381</a>)</li>
+</ul>
+<h2 id="1210">1.2.10<a class="headerlink" href="#1210" title="Permanent link">¤</a></h2>
+<h3 id="new-features_21">New Features<a class="headerlink" href="#new-features_21" title="Permanent link">¤</a></h3>
+<ul>
+<li>Added webrick spec to Gemfile. (<a href="https://github.com/fastai/nbdev/pull/615">#615</a>), thanks to <a href="https://github.com/MarkB2">@MarkB2</a></li>
+<li>Change doc() default for docments (<a href="https://github.com/fastai/nbdev/pull/611">#611</a>), thanks to <a href="https://github.com/muellerzr">@muellerzr</a></li>
+<li>Better checks for cls and self (<a href="https://github.com/fastai/nbdev/pull/596">#596</a>), thanks to <a href="https://github.com/muellerzr">@muellerzr</a></li>
+<li>Use the kernel defined in the kernelspec (<a href="https://github.com/fastai/nbdev/pull/594">#594</a>), thanks to <a href="https://github.com/dleen">@dleen</a></li>
+<li>Add in repr for delegates (<a href="https://github.com/fastai/nbdev/pull/589">#589</a>), thanks to <a href="https://github.com/muellerzr">@muellerzr</a></li>
+</ul>
+<h3 id="bugs-squashed_19">Bugs Squashed<a class="headerlink" href="#bugs-squashed_19" title="Permanent link">¤</a></h3>
+<ul>
+<li>Keep module in name when getting the "qualname" (<a href="https://github.com/fastai/nbdev/pull/606">#606</a>), thanks to <a href="https://github.com/muellerzr">@muellerzr</a></li>
+<li>Fix decimal bug (<a href="https://github.com/fastai/nbdev/pull/604">#604</a>), thanks to <a href="https://github.com/muellerzr">@muellerzr</a></li>
+<li>Use the kernel defined in the kernelspec (<a href="https://github.com/fastai/nbdev/pull/594">#594</a>), thanks to <a href="https://github.com/dleen">@dleen</a></li>
+<li>Misc bug fixes + tests (<a href="https://github.com/fastai/nbdev/pull/593">#593</a>), thanks to <a href="https://github.com/muellerzr">@muellerzr</a></li>
+</ul>
+<h2 id="129">1.2.9<a class="headerlink" href="#129" title="Permanent link">¤</a></h2>
+<h3 id="new-features_22">New Features<a class="headerlink" href="#new-features_22" title="Permanent link">¤</a></h3>
+<ul>
+<li>Implement <code>show_doc</code> for dataclass (<a href="https://github.com/fastai/nbdev/pull/622">#622</a>), thanks to <a href="https://github.com/MarkB2">@MarkB2</a></li>
+</ul>
+<h3 id="bugs-squashed_20">Bugs Squashed<a class="headerlink" href="#bugs-squashed_20" title="Permanent link">¤</a></h3>
+<ul>
+<li>Fix show doc for object, class methods. (<a href="https://github.com/fastai/nbdev/pull/621">#621</a>), thanks to <a href="https://github.com/v-ahuja">@v-ahuja</a></li>
+<li>Fix show doc for keywords. (<a href="https://github.com/fastai/nbdev/pull/619">#619</a>), thanks to <a href="https://github.com/v-ahuja">@v-ahuja</a></li>
+<li>Including <code>@dataclass</code> breaks <code>nbdev_build_lib</code> (<a href="https://github.com/fastai/nbdev/issues/595">#595</a>)</li>
+<li><code>nbdev_nb2md</code> throws error when called in a notebook (<a href="https://github.com/fastai/nbdev/issues/381">#381</a>)</li>
+</ul>
+<h2 id="127">1.2.7<a class="headerlink" href="#127" title="Permanent link">¤</a></h2>
+<h3 id="bugs-squashed_21">Bugs Squashed<a class="headerlink" href="#bugs-squashed_21" title="Permanent link">¤</a></h3>
+<ul>
+<li>Don't build NBs with no <code>#default_exp</code></li>
+</ul>
+<h2 id="126">1.2.6<a class="headerlink" href="#126" title="Permanent link">¤</a></h2>
+<h3 id="new-features_23">New Features<a class="headerlink" href="#new-features_23" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>nbdev_build_libs</code> now works on a single file even without a <code>settings.ini</code> or any <code>#default_exp</code> cell</li>
+<li>Handle <code>#|</code> as directive prefix</li>
+</ul>
+<h3 id="bugs-squashed_22">Bugs Squashed<a class="headerlink" href="#bugs-squashed_22" title="Permanent link">¤</a></h3>
+<ul>
+<li>nbdev_nb2md throws error when called in a notebook (<a href="https://github.com/fastai/nbdev/issues/381">#381</a>)</li>
+</ul>
+<h2 id="125">1.2.5<a class="headerlink" href="#125" title="Permanent link">¤</a></h2>
+<h3 id="new-features_24">New Features<a class="headerlink" href="#new-features_24" title="Permanent link">¤</a></h3>
+<ul>
+<li>Update dependencies</li>
+</ul>
+<h2 id="123">1.2.3<a class="headerlink" href="#123" title="Permanent link">¤</a></h2>
+<h3 id="bugs-squashed_23">Bugs Squashed<a class="headerlink" href="#bugs-squashed_23" title="Permanent link">¤</a></h3>
+<ul>
+<li>Pin jinja2 due to deprecation bug in nbconvert</li>
+</ul>
+<h2 id="122">1.2.2<a class="headerlink" href="#122" title="Permanent link">¤</a></h2>
+<h3 id="new-features_25">New Features<a class="headerlink" href="#new-features_25" title="Permanent link">¤</a></h3>
+<ul>
+<li>Update dependencies</li>
+</ul>
+<h2 id="121">1.2.1<a class="headerlink" href="#121" title="Permanent link">¤</a></h2>
+<h3 id="new-features_26">New Features<a class="headerlink" href="#new-features_26" title="Permanent link">¤</a></h3>
+<ul>
+<li>Make sure docments have linking capability (<a href="https://github.com/fastai/nbdev/pull/585">#585</a>), thanks to <a href="https://github.com/muellerzr">@muellerzr</a></li>
+<li>better logging for duplicate titles (<a href="https://github.com/fastai/nbdev/pull/584">#584</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+</ul>
+<h3 id="bugs-squashed_24">Bugs Squashed<a class="headerlink" href="#bugs-squashed_24" title="Permanent link">¤</a></h3>
+<ul>
+<li>Fix repr issue with <code>show_doc</code> (<a href="https://github.com/fastai/nbdev/pull/588">#588</a>), thanks to <a href="https://github.com/muellerzr">@muellerzr</a></li>
+</ul>
+<h2 id="120">1.2.0<a class="headerlink" href="#120" title="Permanent link">¤</a></h2>
+<ul>
+<li>upgrade nbconvert dep to v6</li>
+</ul>
+<h2 id="1123">1.1.23<a class="headerlink" href="#1123" title="Permanent link">¤</a></h2>
+<h3 id="bugs-squashed_25">Bugs Squashed<a class="headerlink" href="#bugs-squashed_25" title="Permanent link">¤</a></h3>
+<ul>
+<li>fix verbose flag</li>
+</ul>
+<h2 id="1120">1.1.20<a class="headerlink" href="#1120" title="Permanent link">¤</a></h2>
+<h3 id="new-features_27">New Features<a class="headerlink" href="#new-features_27" title="Permanent link">¤</a></h3>
+<ul>
+<li>skip symlinks in recursive glob (<a href="https://github.com/fastai/nbdev/issues/515">#515</a>)</li>
+</ul>
+<h2 id="1115">1.1.15<a class="headerlink" href="#1115" title="Permanent link">¤</a></h2>
+<h3 id="breaking-changes_4">Breaking Changes<a class="headerlink" href="#breaking-changes_4" title="Permanent link">¤</a></h3>
+<ul>
+<li>make recursive behavior for <code>nbdev_build_docs</code> consistent with <code>nbdev_build_lib</code> (<a href="https://github.com/fastai/nbdev/pull/467">#467</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+</ul>
+<h3 id="new-features_28">New Features<a class="headerlink" href="#new-features_28" title="Permanent link">¤</a></h3>
+<ul>
+<li>Allow for a one-time only (potentially) .py -&gt; .ipynb generation (<a href="https://github.com/fastai/nbdev/issues/369">#369</a>)</li>
+</ul>
+<h3 id="bugs-squashed_26">Bugs Squashed<a class="headerlink" href="#bugs-squashed_26" title="Permanent link">¤</a></h3>
+<ul>
+<li>Images with <code>attachment:</code> break export (<a href="https://github.com/fastai/nbdev/pull/501">#501</a>), thanks to <a href="https://github.com/yacchin1205">@yacchin1205</a></li>
+<li>Docs nav doesn't work on gitlab (<a href="https://github.com/fastai/nbdev/pull/488">#488</a>), thanks to <a href="https://github.com/tcapelle">@tcapelle</a></li>
+<li>clean up all instances of recursive (<a href="https://github.com/fastai/nbdev/pull/470">#470</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>After 'conda install -c fastai nbdev', error "<code>HTMLExporter</code> object has no attribute <code>template_path</code>" (<a href="https://github.com/fastai/nbdev/issues/431">#431</a>)</li>
+</ul>
+<h2 id="1113">1.1.13<a class="headerlink" href="#1113" title="Permanent link">¤</a></h2>
+<h3 id="new-features_29">New Features<a class="headerlink" href="#new-features_29" title="Permanent link">¤</a></h3>
+<ul>
+<li>support windows (<a href="https://github.com/fastai/nbdev/pull/392">#392</a>), thanks to <a href="https://github.com/mszhanyi">@mszhanyi</a></li>
+<li><code>nbdev_new</code>: get template from latest release asset (<a href="https://github.com/fastai/nbdev/pull/382">#382</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Add more license options</li>
+</ul>
+<h3 id="bugs-squashed_27">Bugs Squashed<a class="headerlink" href="#bugs-squashed_27" title="Permanent link">¤</a></h3>
+<ul>
+<li>Fix recursive flag (<a href="https://github.com/fastai/nbdev/pull/433">#433</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>conda not installing nbdev properly on WSL2 (<a href="https://github.com/fastai/nbdev/issues/430">#430</a>)</li>
+<li>fix nb2md (<a href="https://github.com/fastai/nbdev/pull/424">#424</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li><code>nbdev_build_lib</code> seems to convert more notebooks than expected (<a href="https://github.com/fastai/nbdev/issues/423">#423</a>)</li>
+<li>fix default arg issue with <code>nbdev_update_lib</code> (<a href="https://github.com/fastai/nbdev/pull/416">#416</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li><code>nbdev_update_lib</code> errors out when fname not supplied (<a href="https://github.com/fastai/nbdev/issues/415">#415</a>)</li>
+<li><code>nbdev_new</code> fails on calling the GitHub API without guidance (<a href="https://github.com/fastai/nbdev/issues/404">#404</a>)</li>
+<li>fix recurse issue (<a href="https://github.com/fastai/nbdev/pull/391">#391</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li><code>nbdev_build_docs</code>----ModuleNotFoundError: No module named 'fastcore' (<a href="https://github.com/fastai/nbdev/issues/390">#390</a>)</li>
+<li><code>nbdev_test_nbs</code> --fname broke in 1.1.7 (<a href="https://github.com/fastai/nbdev/issues/388">#388</a>)</li>
+<li>set recursive=True for docs (<a href="https://github.com/fastai/nbdev/pull/387">#387</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>fix url for getting branch (<a href="https://github.com/fastai/nbdev/pull/386">#386</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li><code>nbdev_nb2md</code> throws error when called in a notebook (<a href="https://github.com/fastai/nbdev/issues/381">#381</a>)</li>
+</ul>
+<h2 id="1112">1.1.12<a class="headerlink" href="#1112" title="Permanent link">¤</a></h2>
+<h3 id="new-features_30">New Features<a class="headerlink" href="#new-features_30" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>nbdev_new</code> should grab files from a release asset in <code>nbdev_template</code> (<a href="https://github.com/fastai/nbdev/issues/383">#383</a>)</li>
+<li>Use Jekyll Theme instead of vendoring all required files (<a href="https://github.com/fastai/nbdev/issues/379">#379</a>)</li>
+<li>Create relevant directories in <code>docs/_data</code> if do not already exist (<a href="https://github.com/fastai/nbdev/issues/377">#377</a>)</li>
+</ul>
+<h2 id="116">1.1.6<a class="headerlink" href="#116" title="Permanent link">¤</a></h2>
+<h3 id="new-features_31">New Features<a class="headerlink" href="#new-features_31" title="Permanent link">¤</a></h3>
+<ul>
+<li>Clean Google Colab metadata and line endings (<a href="https://github.com/fastai/nbdev/pull/364">#364</a>), thanks to <a href="https://github.com/muellerzr">@muellerzr</a></li>
+<li>add ability to find notebooks recursively (<a href="https://github.com/fastai/nbdev/pull/359">#359</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>Add <code>bare</code> flag to <code>nbdev_build_lib</code> (<a href="https://github.com/fastai/nbdev/issues/336">#336</a>)</li>
+<li>install git hooks in <code>nbdev_new</code> (<a href="https://github.com/fastai/nbdev/issues/308">#308</a>)</li>
+<li><code>nbdev_new</code> now works on an existing cloned repo, instead of creating a new repo (<a href="https://github.com/fastai/nbdev/issues/307">#307</a>)</li>
+</ul>
+<h3 id="bugs-squashed_28">Bugs Squashed<a class="headerlink" href="#bugs-squashed_28" title="Permanent link">¤</a></h3>
+<ul>
+<li><code>nbdev_update_lib --fname notebook.ipynb</code> crashes (while <code>nbdev_update_lib</code> works) (<a href="https://github.com/fastai/nbdev/issues/341">#341</a>)</li>
+<li>Copy new files only if they don't exist for nbdev_new (<a href="https://github.com/fastai/nbdev/issues/309">#309</a>)</li>
+</ul>
+<h2 id="113">1.1.3<a class="headerlink" href="#113" title="Permanent link">¤</a></h2>
+<h3 id="new-features_32">New Features<a class="headerlink" href="#new-features_32" title="Permanent link">¤</a></h3>
+<ul>
+<li>Place source code below heading on #exports (<a href="https://github.com/fastai/nbdev/pull/265">#265</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+</ul>
+<h2 id="112">1.1.2<a class="headerlink" href="#112" title="Permanent link">¤</a></h2>
+<h3 id="bugs-squashed_29">Bugs Squashed<a class="headerlink" href="#bugs-squashed_29" title="Permanent link">¤</a></h3>
+<ul>
+<li>update fastcore requirement (<a href="https://github.com/fastai/nbdev/issues/281">#281</a>)</li>
+</ul>
+<h2 id="111">1.1.1<a class="headerlink" href="#111" title="Permanent link">¤</a></h2>
+<h3 id="new-features_33">New Features<a class="headerlink" href="#new-features_33" title="Permanent link">¤</a></h3>
+<ul>
+<li>Make CLI faster by removing unneeded imports and moving CLI commands to source modules (<a href="https://github.com/fastai/nbdev/issues/271">#271</a>)</li>
+<li>Move <code>Config</code> to fastcore (<a href="https://github.com/fastai/nbdev/issues/280">#280</a>)</li>
+</ul>
+<h2 id="110">1.1.0<a class="headerlink" href="#110" title="Permanent link">¤</a></h2>
+<h3 id="breaking-changes_5">Breaking Changes<a class="headerlink" href="#breaking-changes_5" title="Permanent link">¤</a></h3>
+<ul>
+<li>Remove magics (<a href="https://github.com/fastai/nbdev/issues/269">#269</a>)</li>
+<li>Removed callbacks (<a href="https://github.com/fastai/nbdev/pull/253">#253</a>), thanks to <a href="https://github.com/pete88b">@pete88b</a></li>
+<li>move conda packager to <code>fastrelease</code> (<a href="https://github.com/fastai/nbdev/issues/252">#252</a>)</li>
+</ul>
+<h3 id="new-features_34">New Features<a class="headerlink" href="#new-features_34" title="Permanent link">¤</a></h3>
+<ul>
+<li>Place source code below heading on #exports (<a href="https://github.com/fastai/nbdev/pull/265">#265</a>), thanks to <a href="https://github.com/hamelsmu">@hamelsmu</a></li>
+<li>always skip cells labeled "skip" in test (<a href="https://github.com/fastai/nbdev/issues/257">#257</a>)</li>
+</ul>
+<h2 id="1017">1.0.17<a class="headerlink" href="#1017" title="Permanent link">¤</a></h2>
+<h3 id="bugs-squashed_30">Bugs Squashed<a class="headerlink" href="#bugs-squashed_30" title="Permanent link">¤</a></h3>
+<ul>
+<li>restrict nbconvert&lt;6 to avoid upgrade problems (<a href="https://github.com/fastai/nbdev/issues/249">#249</a>)</li>
+</ul>
+<h2 id="1016">1.0.16<a class="headerlink" href="#1016" title="Permanent link">¤</a></h2>
+<h3 id="bugs-squashed_31">Bugs Squashed<a class="headerlink" href="#bugs-squashed_31" title="Permanent link">¤</a></h3>
+<ul>
+<li>When generating docs, import cells are run even if not exported (<a href="https://github.com/fastai/nbdev/issues/248">#248</a>)</li>
+</ul>
+<h2 id="1015">1.0.15<a class="headerlink" href="#1015" title="Permanent link">¤</a></h2>
+<h3 id="new-features_35">New Features<a class="headerlink" href="#new-features_35" title="Permanent link">¤</a></h3>
+<ul>
+<li>add option to not exec nb for fastpages (<a href="https://github.com/fastai/nbdev/issues/244">#244</a>)</li>
+<li>Enable Codespaces for nbdev (<a href="https://github.com/fastai/nbdev/issues/243">#243</a>)</li>
+</ul>
+<h3 id="bugs-squashed_32">Bugs Squashed<a class="headerlink" href="#bugs-squashed_32" title="Permanent link">¤</a></h3>
+<ul>
+<li>Fix: correct notebook2html path operation for Windows. (<a href="https://github.com/fastai/nbdev/issues/239">#239</a>)</li>
+</ul>
+<h2 id="1013">1.0.13<a class="headerlink" href="#1013" title="Permanent link">¤</a></h2>
+<h3 id="new-features_36">New Features<a class="headerlink" href="#new-features_36" title="Permanent link">¤</a></h3>
+<ul>
+<li>remove numpy conda dep and update to fastcore 1.0.5 (<a href="https://github.com/fastai/nbdev/issues/241">#241</a>)</li>
+</ul>
+<h3 id="bugs-squashed_33">Bugs Squashed<a class="headerlink" href="#bugs-squashed_33" title="Permanent link">¤</a></h3>
+<ul>
+<li>allow nbdev imports when not in an nbdev project (<a href="https://github.com/fastai/nbdev/issues/238">#238</a>)</li>
+</ul>
+<h2 id="1010">1.0.10<a class="headerlink" href="#1010" title="Permanent link">¤</a></h2>
+<h3 id="new-features_37">New Features<a class="headerlink" href="#new-features_37" title="Permanent link">¤</a></h3>
+<ul>
+<li>Magic flags for tests (<a href="https://github.com/fastai/nbdev/pull/232">#232</a>)</li>
+<li>Add ability to have Colab badges on pages (<a href="https://github.com/fastai/nbdev/pull/210">#210</a>)</li>
+<li>Support for <code>doc_path</code> (<a href="https://github.com/fastai/nbdev/pull/235">#235</a>)</li>
+</ul>
+<h3 id="bugs-squashed_34">Bugs Squashed<a class="headerlink" href="#bugs-squashed_34" title="Permanent link">¤</a></h3>
+<ul>
+<li>Remove colab vendor specific tags which cause <code>nbdev_build_docs</code> to fail (<a href="https://github.com/fastai/nbdev/pull/207">#207</a>)</li>
+<li>hooks folder inside .git must be manually created before <code>nbdev_install_git_hooks</code> (<a href="https://github.com/fastai/nbdev/pull/230">#230</a>)</li>
+<li>updates to how backtick names are converted to doc links (<a href="https://github.com/fastai/nbdev/pull/218">#218</a>)</li>
+</ul>
+<h2 id="version-100">Version 1.0.0<a class="headerlink" href="#version-100" title="Permanent link">¤</a></h2>
+<ul>
+<li>Initial release</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../nbdev_cli/nbdev_help/" class="md-footer__link md-footer__link--prev" aria-label="Previous: nbdev_help" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              nbdev_help
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2020 onwards, Jeremy Howard
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+    and 
+    <a href="https://nbdev-mkdocs.airt.ai/" target="_blank" rel="noopener">
+      Material for nbdev
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../overrides/js/extra.js"></script>
+      
+        <script src="../overrides/js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+    
+  </body>
+</html>

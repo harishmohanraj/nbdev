@@ -1,0 +1,2688 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Create delightful software with Jupyter Notebooks">
+      
+      
+        <meta name="author" content="Jeremy Howard and Hamel Husain">
+      
+      
+        <link rel="canonical" href="https://nbdev.fast.ai/explanations/docs/">
+      
+      <link rel="icon" href="../../overrides/images/compass-outline.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Docs Website - nbdev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../overrides/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+    
+  
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="nbdev - Docs Website" />
+  <meta property="og:description" content="Create delightful software with Jupyter Notebooks" />
+  <meta property="og:url" content="https://nbdev.fast.ai/explanations/docs/" />
+  <meta property="og:image" content="https://opengraph.githubassets.com/1671517121.069872/fastai/nbdev" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="nbdev - Docs Website" />
+  <meta name="twitter:description" content="Create delightful software with Jupyter Notebooks" />
+  <meta name="twitter:image" content="https://opengraph.githubassets.com/1671517121.069872/fastai/nbdev" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docs-website" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="nbdev" class="md-header__button md-logo" aria-label="nbdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 17 3.2-6.8L17 7l-3.2 6.8L7 17m5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            nbdev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Docs Website
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fastai/nbdev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nbdev
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="nbdev" class="md-nav__button md-logo" aria-label="nbdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 17 3.2-6.8L17 7l-3.2 6.8L7 17m5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8Z"/></svg>
+
+    </a>
+    nbdev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fastai/nbdev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nbdev
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migrating/" class="md-nav__link">
+        nbdev1 Migration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../tutorials/">Tutorials</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/best_practices/" class="md-nav__link">
+        Notebook Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/blogging/" class="md-nav__link">
+        Blogging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/docs_only/" class="md-nav__link">
+        Documentation Only Sites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/git_friendly_jupyter/" class="md-nav__link">
+        Git-Friendly Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/modular_nbdev/" class="md-nav__link">
+        Modular nbdev
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/pre_commit/" class="md-nav__link">
+        Pre-Commit Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/qmd_intro/" class="md-nav__link">
+        Qmd Documents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/renderscript/" class="md-nav__link">
+        RenderScripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/tutorial/" class="md-nav__link">
+        End-To-End Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Explanations</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Explanations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Explanations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        Settings.ini
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../directives/" class="md-nav__link">
+        Directives
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Docs Website
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Docs Website
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    Concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-files" class="md-nav__link">
+    Source Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notebook-processor" class="md-nav__link">
+    Notebook Processor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quarto" class="md-nav__link">
+    Quarto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-site" class="md-nav__link">
+    Static Site
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-quarto" class="md-nav__link">
+    Customizing Quarto
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing Quarto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-sidebar" class="md-nav__link">
+    Customizing The Sidebar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-show_doc-works" class="md-nav__link">
+    How show_doc works
+  </a>
+  
+    <nav class="md-nav" aria-label="How show_doc works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-cell-execution" class="md-nav__link">
+    Automatic Cell Execution
+  </a>
+  
+    <nav class="md-nav" aria-label="Automatic Cell Execution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forcing-cells-to-execute" class="md-nav__link">
+    Forcing Cells To Execute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping-execution" class="md-nav__link">
+    Skipping Execution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-show_doc" class="md-nav__link">
+    Why use show_doc?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#previewing-your-site-locally" class="md-nav__link">
+    Previewing Your Site Locally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-docs-with-github-actions" class="md-nav__link">
+    Deploying Docs With GitHub Actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-your-docs-on-other-platforms" class="md-nav__link">
+    Deploying Your Docs On Other Platforms
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why_nbdev/" class="md-nav__link">
+        Why nbdev
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../api/">API</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/clean/" class="md-nav__link">
+        clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cli/" class="md-nav__link">
+        cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/config/" class="md-nav__link">
+        config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/doclinks/" class="md-nav__link">
+        doclinks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/export/" class="md-nav__link">
+        export
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/frontmatter/" class="md-nav__link">
+        frontmatter
+      </a>
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/maker/" class="md-nav__link">
+        maker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/merge/" class="md-nav__link">
+        merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/migrate/" class="md-nav__link">
+        migrate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/process/" class="md-nav__link">
+        process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/processors/" class="md-nav__link">
+        processors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/qmd/" class="md-nav__link">
+        qmd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/quarto/" class="md-nav__link">
+        quarto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/release/" class="md-nav__link">
+        release
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/serve/" class="md-nav__link">
+        serve
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/showdoc/" class="md-nav__link">
+        showdoc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/sync/" class="md-nav__link">
+        sync
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/test/" class="md-nav__link">
+        test
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/clean/" class="md-nav__link">
+        nbdev.clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/cli/" class="md-nav__link">
+        nbdev.cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/config/" class="md-nav__link">
+        nbdev.config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/doclinks/" class="md-nav__link">
+        nbdev.doclinks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/export/" class="md-nav__link">
+        nbdev.export
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/extract_attachments/" class="md-nav__link">
+        nbdev.extract_attachments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/frontmatter/" class="md-nav__link">
+        nbdev.frontmatter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/imports/" class="md-nav__link">
+        nbdev.imports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/maker/" class="md-nav__link">
+        nbdev.maker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/merge/" class="md-nav__link">
+        nbdev.merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/migrate/" class="md-nav__link">
+        nbdev.migrate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/process/" class="md-nav__link">
+        nbdev.process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/processors/" class="md-nav__link">
+        nbdev.processors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/qmd/" class="md-nav__link">
+        nbdev.qmd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/quarto/" class="md-nav__link">
+        nbdev.quarto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/release/" class="md-nav__link">
+        nbdev.release
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/serve/" class="md-nav__link">
+        nbdev.serve
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/serve_drv/" class="md-nav__link">
+        nbdev.serve_drv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/showdoc/" class="md-nav__link">
+        nbdev.showdoc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/sync/" class="md-nav__link">
+        nbdev.sync
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/test/" class="md-nav__link">
+        nbdev.test
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CLI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          CLI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_create_config/" class="md-nav__link">
+        nbdev_create_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_update/" class="md-nav__link">
+        nbdev_update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_export/" class="md-nav__link">
+        nbdev_export
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_fix/" class="md-nav__link">
+        nbdev_fix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_merge/" class="md-nav__link">
+        nbdev_merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_trust/" class="md-nav__link">
+        nbdev_trust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_clean/" class="md-nav__link">
+        nbdev_clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_install_hooks/" class="md-nav__link">
+        nbdev_install_hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_filter/" class="md-nav__link">
+        nbdev_filter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_sidebar/" class="md-nav__link">
+        nbdev_sidebar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_test/" class="md-nav__link">
+        nbdev_test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_new/" class="md-nav__link">
+        nbdev_new
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_migrate/" class="md-nav__link">
+        nbdev_migrate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_install_quarto/" class="md-nav__link">
+        nbdev_install_quarto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_install/" class="md-nav__link">
+        nbdev_install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_docs/" class="md-nav__link">
+        nbdev_docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_preview/" class="md-nav__link">
+        nbdev_preview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_prepare/" class="md-nav__link">
+        nbdev_prepare
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_readme/" class="md-nav__link">
+        nbdev_readme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_release_gh/" class="md-nav__link">
+        nbdev_release_gh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_release_git/" class="md-nav__link">
+        nbdev_release_git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_changelog/" class="md-nav__link">
+        nbdev_changelog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_pypi/" class="md-nav__link">
+        nbdev_pypi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_conda/" class="md-nav__link">
+        nbdev_conda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_release_both/" class="md-nav__link">
+        nbdev_release_both
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_bump_version/" class="md-nav__link">
+        nbdev_bump_version
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_proc_nbs/" class="md-nav__link">
+        nbdev_proc_nbs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_help/" class="md-nav__link">
+        nbdev_help
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGELOG/" class="md-nav__link">
+        Releases
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    Concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-files" class="md-nav__link">
+    Source Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notebook-processor" class="md-nav__link">
+    Notebook Processor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quarto" class="md-nav__link">
+    Quarto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-site" class="md-nav__link">
+    Static Site
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-quarto" class="md-nav__link">
+    Customizing Quarto
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing Quarto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-sidebar" class="md-nav__link">
+    Customizing The Sidebar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-show_doc-works" class="md-nav__link">
+    How show_doc works
+  </a>
+  
+    <nav class="md-nav" aria-label="How show_doc works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-cell-execution" class="md-nav__link">
+    Automatic Cell Execution
+  </a>
+  
+    <nav class="md-nav" aria-label="Automatic Cell Execution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forcing-cells-to-execute" class="md-nav__link">
+    Forcing Cells To Execute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping-execution" class="md-nav__link">
+    Skipping Execution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-show_doc" class="md-nav__link">
+    Why use show_doc?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#previewing-your-site-locally" class="md-nav__link">
+    Previewing Your Site Locally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-docs-with-github-actions" class="md-nav__link">
+    Deploying Docs With GitHub Actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-your-docs-on-other-platforms" class="md-nav__link">
+    Deploying Your Docs On Other Platforms
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="docs-website">Docs Website<a class="headerlink" href="#docs-website" title="Permanent link">¤</a></h1>
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">¤</a></h2>
+<h3 id="source-files">Source Files<a class="headerlink" href="#source-files" title="Permanent link">¤</a></h3>
+<p>There are two mediums in which you can author documentation in nbdev:</p>
+<ol>
+<li>Jupyter Notebooks</li>
+<li>Quarto Markdown (.qmd)</li>
+</ol>
+<p>For most cases, you will use Jupyter Notebooks. However, you may choose
+to author a document in Quarto Markdown if there is no code on that
+particular page. When in doubt, we recommend using notebooks as they are
+more versatile.</p>
+<p>In the case of notebooks, nbdev pre-processes them to add, remove or
+change the content before passing it to Quarto. In some cases, nbdev
+even executes certain cells in order to render the documentation
+properly. The mechanics of this are discussed in the <a href="#notebook-processor">Notebook
+Processor</a> section below.</p>
+<p>For markdown files, <a href="https://quarto.org">Quarto</a> renders these directly.</p>
+<h3 id="notebook-processor">Notebook Processor<a class="headerlink" href="#notebook-processor" title="Permanent link">¤</a></h3>
+<p>Nbdev does special pre-processing on notebooks based on the following:</p>
+<ol>
+<li><strong>Directives</strong>: Directives are special comments that allow you to
+    perform operations on cells. For example, the comment <code>#|hide</code>
+    allows you to hide cell inputs and outputs. You can read more about
+    directives <a href="./directives.ipynb">on this page</a>. Directives that are
+    unique to nbdev and not supported by Quarto are removed from the
+    notebook before being passed to Quarto.</li>
+<li><strong>Front Matter</strong>: Front matter allows you to specify document-level
+    options so you don’t have to repeat them on each cell. (Similarly,
+    <code>_quarto.yml</code> allows you to specify project-level options.) You can
+    read more about Quarto front-matter
+    <a href="https://quarto.org/docs/reference/formats/html.html">here</a>.</li>
+</ol>
+<p>The directives and front-matter are used by a <strong>Processing Pipeline</strong> to
+transform notebooks. Many of these pre-processing steps are defined in
+<a href="https://github.com/fastai/nbdev/blob/master/nbdev/processors.py"><code>nbdev.processors</code></a>,
+which are then run by
+<a href="https://nbdev.fast.ai/api/process.html#nbprocessor"><code>nbdev.process.NBProcessor</code></a>.
+Some of these pre-processing steps involve running code (with
+<a href="https://github.com/fastai/execnb">execnb</a>) in order to dynamically
+render API documentation. This process is explained in the <a href="#how-show_doc-works">How show_doc
+works</a> section below.</p>
+<p>When generating your docs site, the intermediate output of these
+pre-processed notebooks and other quarto project files are saved into a
+directory named <code>_proc/</code> at the root of your repo. You can inspect the
+<code>_proc/</code> directory in order to debug or understand how notebooks are
+pre-processed.</p>
+<h3 id="quarto">Quarto<a class="headerlink" href="#quarto" title="Permanent link">¤</a></h3>
+<p><a href="https://quarto.org/">Quarto</a> is the mechanism nbdev uses to generate
+web pages from notebooks. It is useful to visit the <a href="https://quarto.org/docs/guide/">Quarto
+docs</a> and understand how it works. nbdev
+automatically generates the Quarto configuration files <code>_quarto.yml</code> and
+<code>sidebar.yml</code> for you.</p>
+<p>You can override any settings in <code>_quarto.yml</code> by defining a
+<code>custom.yml</code> file. This is explained further in the <a href="#customizing-quarto">Customizing
+Quarto</a> section. We explain how to customize your
+sidebar in the <a href="#customizing-the-sidebar">Customizing The Sidebar</a>
+section.</p>
+<h3 id="static-site">Static Site<a class="headerlink" href="#static-site" title="Permanent link">¤</a></h3>
+<p>Quarto has a built-in <a href="https://www.cloudflare.com/learning/performance/static-site-generator/">static site
+generator</a>
+that will generate HTML, Javascript and CSS files. These files will be
+placed in the <code>doc_path</code> directory as specified in your project’s
+<code>settings.ini</code> file, which is <code>_docs/</code> by default.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¤</a></h2>
+<p>Below is a diagram on how these concepts fit together.</p>
+<div>
+
+<p>
+
+<img src="docs_files/figure-commonmark/mermaid-figure-1.png"
+style="width:7.04in;height:9.28in" />
+
+</p>
+
+</div>
+
+<h2 id="customizing-quarto">Customizing Quarto<a class="headerlink" href="#customizing-quarto" title="Permanent link">¤</a></h2>
+<p>You can create a <code>custom.yml</code> file in the same location as your
+<code>_quarto.yml</code> file to override any values in <code>_quarto.yml</code>. For example,
+assume your <code>_quarto.yml</code> file looks contains this:</p>
+<div class="py-2 px-3 mb-4 border rounded shadow-sm" fig-align="center">
+
+<div class="highlight"><pre><span></span><code><span class="nt">website</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nbdev&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">site-url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://nbdev.fast.ai/&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Create</span><span class="nv"> </span><span class="s">delightful</span><span class="nv"> </span><span class="s">software</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">Jupyter</span><span class="nv"> </span><span class="s">Notebooks&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">twitter-card</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">open-graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">repo-branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
+<span class="w">  </span><span class="nt">repo-url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/fastai/nbdev&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">repo-actions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">issue</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">navbar</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">background</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">primary</span><span class="w"></span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">right</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span><span class="w"></span>
+<span class="w">        </span><span class="nt">href</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/fastai/nbdev&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sidebar</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;floating&quot;</span><span class="w"></span>
+</code></pre></div>
+
+</div>
+
+<p>Let’s assume you want to customize your <a href="https://quarto.org/docs/websites/website-navigation.html#side-navigation">sidebar navigation
+options</a>
+such that instead of “floating” for <code>sidebar.style</code>, you wanted your
+navbar to be “docked”. Additionally, lets assume you want a different
+background color using the <code>sidebar.background</code> field which is not in
+the configuration above.</p>
+<p>To accomplish these tasks, you would create a <code>custom.yml</code> in the same
+location as <code>_quarto.yml</code> with these contents:</p>
+<div class="py-2 px-3 mb-4 border rounded shadow-sm" fig-align="center">
+
+<div class="highlight"><pre><span></span><code><span class="nt">website</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sidebar</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;docked&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">background</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;dark&quot;</span><span class="w"></span>
+</code></pre></div>
+
+</div>
+
+<div>
+
+> **Note**
+>
+> You can also set `custom_quarto_yml = True` in settings.ini if you
+> wish to edit `_quarto.yml` directly instead of overriding settings in
+> `custom.yml`.
+
+</div>
+
+<h3 id="customizing-the-sidebar">Customizing The Sidebar<a class="headerlink" href="#customizing-the-sidebar" title="Permanent link">¤</a></h3>
+<p>By default nbdev automatically generates <code>sidebar.yml</code>, which specifies
+the tree structure of your sidebar. nbdev infers the tree structure by
+inspecting the directory structure containing your source files. You can
+see an example of this by inspecting the folder structure of <a href="https://github.com/fastai/nbdev/tree/master/nbs">the
+notebooks directory in
+nbdev</a> and the
+corresponding left-hand sidebar on this website. Leading numbers in
+filenames and directories are ignored when naming elements of the
+sidebar (which you can see examples of in this project’s notebooks
+directory).</p>
+<p>To customize the sidebar, you must set <code>custom_sidebar = true</code> in
+<code>settings.ini</code>. This will prevent nbdev from regenerating this file
+every time the docs are re-built. This way, you an edit this file
+directly instead of overriding the sidebar with <code>custom.yml</code>.</p>
+<h2 id="how-show_doc-works">How <a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a> works<a class="headerlink" href="#how-show_doc-works" title="Permanent link">¤</a></h2>
+<p>When your documention website is built, all functions and classes you
+export to source code will be automatically documented with
+<a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a>. This
+function outputs a summary of the symbol, showing its signature,
+docstring, and parameters. For instance, if you have this function:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">say_gday</span><span class="p">(</span>
+    <span class="n">greeting</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s2">&quot;G&#39;day&quot;</span><span class="p">,</span>  <span class="c1"># Greeting to use</span>
+    <span class="n">strine</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>      <span class="c1"># Use incomprehensible Aussie accent?</span>
+    <span class="n">dropbears</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> <span class="c1"># Also warn about drop-bears?</span>
+    <span class="s2">&quot;Says g&#39;day, the classic Aussie greeting&quot;</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>This is how it’s rendered in the documentation, by automatically
+generating a temporary cell containing:</p>
+<div class="py-2 px-3 mb-4 border rounded shadow-sm overflow-auto"
+fig-align="center">
+
+<div class="highlight"><pre><span></span><code><span class="n">show_doc</span><span class="p">(</span><span class="n">say_gday</span><span class="p">)</span>
+</code></pre></div>
+
+------------------------------------------------------------------------
+
+### say_gday
+
+>      say_gday (greeting:str="G'day", strine:bool=True, dropbears:bool=False)
+
+Says g’day, the classic Aussie greeting
+
+|           | **Type** | **Default** | **Details**                         |
+|-----------|----------|-------------|-------------------------------------|
+| greeting  | str      | G’day       | Greeting to use                     |
+| strine    | bool     | True        | Use incomprehensible Aussie accent? |
+| dropbears | bool     | False       | Also warn about drop-bears?         |
+
+</div>
+
+<p>Because this is done automatically any time you build your docs
+(including automatically by continuous integration), your documentation
+will always contain current information about your code.</p>
+<p>You can also document code that’s not created in a notebook, by using
+<a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a> with
+imported code. For instance, if we wanted to document
+<a href="https://nbdev.fast.ai/api/release.html#release_conda"><code>release_conda</code></a>,
+we can import it and call <code>show_doc(release_conda)</code>:</p>
+<div class="py-2 px-3 mb-4 border rounded shadow-sm overflow-auto"
+fig-align="center">
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">nbdev.release</span> <span class="kn">import</span> <span class="n">release_conda</span>
+<span class="n">show_doc</span><span class="p">(</span><span class="n">release_conda</span><span class="p">)</span>
+</code></pre></div>
+
+------------------------------------------------------------------------
+
+<a
+href="https://github.com/fastai/nbdev/blob/master/nbdev/release.py#LNone"
+target="_blank" style="float:right; font-size:smaller">source</a>
+
+### release_conda
+
+>      release_conda (path:str='conda', do_build:<function bool_arg>=True,
+>                     build_args:str='', skip_upload:<function
+>                     store_true>=False, mambabuild:<function store_true>=False,
+>                     upload_user:str=None)
+
+Create a `meta.yaml` file ready to be built into a package, and
+optionally build and upload it
+
+|             | **Type**   | **Default** | **Details**                                       |
+|-------------|------------|-------------|---------------------------------------------------|
+| path        | str        | conda       | Path where package will be created                |
+| do_build    | bool_arg   | True        | Run `conda build` step                            |
+| build_args  | str        |             | Additional args (as str) to send to `conda build` |
+| skip_upload | store_true | False       | Skip `anaconda upload` step                       |
+| mambabuild  | store_true | False       | Use `mambabuild` (requires `boa`)                 |
+| upload_user | str        | None        | Optional user to upload package to                |
+
+</div>
+
+<h3 id="automatic-cell-execution">Automatic Cell Execution<a class="headerlink" href="#automatic-cell-execution" title="Permanent link">¤</a></h3>
+<p>When your documentation is built, all your manually added
+<a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a> cells are
+run automatically. nbdev also executes all cells containing an <code>import</code>
+statement, and all exported cells – that way we can be sure that the
+symbol used in your
+<a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a> cell is
+available.</p>
+<p>We don’t, however, execute any other cells. That’s because you wouldn’t
+want to wait for your entire notebook to run just to build your docs;
+for instance, your docs might demonstrate training a model which takes
+hours to complete!</p>
+<p>This leads to an important rule when authoring nbdev notebooks:</p>
+<div>
+
+> **Warning**
+>
+> Do not mix `import` statements (or calls to
+> [`show_doc`](https://nbdev.fast.ai/api/showdoc.html#show_doc)) with
+> other code in a single cell. If you do, *all* the code in that cell
+> will be executed every time you build your docs, which might lead to
+> errors (since not all previous cells will have been executed.
+>
+> Instead, put your imports in separate cells, and calls to
+> [`show_doc`](https://nbdev.fast.ai/api/showdoc.html#show_doc) should
+> contain only that one line of code – the
+> [`show_doc`](https://nbdev.fast.ai/api/showdoc.html#show_doc) call.
+
+</div>
+
+<p>Note that nbdev automatically hides the actual <code>show_doc(...)</code> line of
+code. So your users only see the output.</p>
+<h4 id="forcing-cells-to-execute">Forcing Cells To Execute<a class="headerlink" href="#forcing-cells-to-execute" title="Permanent link">¤</a></h4>
+<p>Sometimes you may want to execute additional cells beyond what is
+automatically executed by nbdev. For instance, on our <a href="../getting_started.html">Getting
+Started</a> page we show a list of all nbdev
+commands, automatically generated with <code>nbdev_help</code>. We want this page
+to always have the most up to date list of commands and docs, so we want
+it to always execute when the docs are rendered. To do that, add the
+following directive to the top of a cell:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#| exec_doc</span>
+</code></pre></div>
+<p>Alternatively, you can get nbdev to automatically execute <em>all</em> cells
+when rendering your docs, by adding the following to your notebook
+frontmatter:</p>
+<div class="highlight"><pre><span></span><code>---
+<span class="gu">exec_all: true</span>
+<span class="gu">---</span>
+</code></pre></div>
+<h4 id="skipping-execution">Skipping Execution<a class="headerlink" href="#skipping-execution" title="Permanent link">¤</a></h4>
+<p>Likewise, you can instruct nbdev to not execute any cells when rendering
+your docs with the following front matter:</p>
+<div class="highlight"><pre><span></span><code>---
+<span class="gu">skip_showdoc: true</span>
+<span class="gu">---</span>
+</code></pre></div>
+<p>Or ignore execution for a specific cell with this directive:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#|eval: false</span>
+</code></pre></div>
+<h3 id="why-use-show_doc">Why use <a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a>?<a class="headerlink" href="#why-use-show_doc" title="Permanent link">¤</a></h3>
+<p>Many Python developers use <a href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">sphinx
+autodoc</a>
+to automatically document a whole module all at once. Whilst this can
+work reasonably well, we think there are huge benefits for both
+developers and users in using nbdev’s approach instead</p>
+<p>The premise of nbdev’s approach is that your documentation is important
+enough to be worth you taking the time to think carefully though each
+thing you want to show your users, what examples you’re going to
+provide, maybe adding some images to explain more complex ideas, and so
+forth. Jupyter provides a terrific environment for creating just these
+kinds of documents. For instance, with Jupyter you can:</p>
+<ul>
+<li>Paste images directly from your clipboard into a cell</li>
+<li>Insert code and have it executed and the results displayed to users</li>
+<li>Create a hierarchy of headings to help structure your page</li>
+<li>…and much more.</li>
+</ul>
+<p>With <a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a>, you
+can insert automatically-updated API details for your library anywhere
+in a page. That means that you get to decide exactly how your page
+should look, and what information is provided where. You don’t have to
+limit yourself to the limits of ASCII art for diagrams, and can include
+full end-to-end code walk-through of the processes your users will be
+following.</p>
+<h2 id="previewing-your-site-locally">Previewing Your Site Locally<a class="headerlink" href="#previewing-your-site-locally" title="Permanent link">¤</a></h2>
+<p>You can preview your docs anytime by running
+<a href="https://nbdev.fast.ai/api/quarto.html#nbdev_preview"><code>nbdev_preview</code></a>.
+While in preview mode, you can make updates to notebooks and it will be
+reflected (after a small delay) in your browser.</p>
+<h2 id="deploying-docs-with-github-actions">Deploying Docs With GitHub Actions<a class="headerlink" href="#deploying-docs-with-github-actions" title="Permanent link">¤</a></h2>
+<p>If your nbdev project lives in GitHub, we include automation that
+deploys your documentation site for you on <a href="https://pages.github.com/">GitHub
+Pages</a>.</p>
+<p>nbdev comes bundled with a <a href="https://github.com/fastai/nbdev/blob/master/.github/workflows/deploy.yaml">workflow
+file</a>
+that enables this automation. This workflow is automatically triggered
+whenever you change any of the content in your repo. The following
+GitHub Actions workflows will run to generate a docs site (in this
+order):</p>
+<ol>
+<li><code>Deploy to GitHub Pages</code>: This workflow builds the docs with nbdev.
+    This is defined in
+    <a href="https://github.com/fastai/nbdev/blob/master/.github/workflows/deploy.yaml">deploy.yaml</a>
+    and references
+    <a href="https://github.com/fastai/workflows/blob/master/quarto-ghp/action.yml">fastai/workflows/quarto-ghp</a>.</li>
+<li><code>pages build and deployment</code>: This is an internal built-in workflow
+    that GitHub provides whenever GitHub pages are enabled.</li>
+</ol>
+<p>Should anything go wrong in your page build, you can always look at the
+logs of these workflows. Like other workflows, these can be found in the
+Actions tab of your repo:</p>
+<p><img src="images/github-actions-pages.png"
+class="border rounded shadow-sm" data-fig-align="center" /></p>
+<p>To read more about GitHub Actions, see <a href="https://github.com/features/actions">their
+docs</a>.</p>
+<h2 id="deploying-your-docs-on-other-platforms">Deploying Your Docs On Other Platforms<a class="headerlink" href="#deploying-your-docs-on-other-platforms" title="Permanent link">¤</a></h2>
+<p>You can generate all of the static assets for your site (html, css, etc)
+by running the command
+<a href="https://nbdev.fast.ai/api/quarto.html#nbdev_docs"><code>nbdev_docs</code></a>. After
+running this command, all of the files for your documentation site will
+be located in the <code>_docs/</code> directory (the location is configurable by
+<code>doc_path</code> in <code>settings.ini</code>) at the root of your repository. This
+directory is not checked into git and is ignored by <code>.gitignore</code>, but
+you can use these files to deploy to any hosting platform you want.</p>
+<p>You can also use the <code>quarto publish</code> command to render your docs on a
+wide variety of other platforms, which is discussed in the Quarto docs
+<a href="https://quarto.org/docs/publishing/other.html">here</a>. <strong>After running
+the command
+<a href="https://nbdev.fast.ai/api/quarto.html#nbdev_docs"><code>nbdev_docs</code></a>, the
+<code>quarto publish</code> command must be run from the root of the <code>_proc/</code>
+directory</strong>, which is located at the root of your repo. The built-in
+help of <code>quarto publish</code> provides a good overview of the various targets
+available:</p>
+<div>
+
+> **Call
+> [`nbdev_proc_nbs`](https://nbdev.fast.ai/api/quarto.html#nbdev_proc_nbs)
+> and publish from the `_proc/` directory**
+>
+> To use `quarto publish` with nbdev, you must run the
+> [`nbdev_proc_nbs`](https://nbdev.fast.ai/api/quarto.html#nbdev_proc_nbs)
+> command to pre-process your notebooks before publishing your docs. As
+> a reminder,
+> [`nbdev_proc_nbs`](https://nbdev.fast.ai/api/quarto.html#nbdev_proc_nbs)
+> creates the directory `_proc/` at the root of your project that Quarto
+> uses to render your site.
+>
+> For example, to publish a site to Netlify you can run the following
+> command from the root of your repo:
+>
+> <div class="highlight"><pre><span></span><code>nbdev_proc_nbs <span class="o">&amp;&amp;</span> <span class="nb">cd</span> _proc <span class="o">&amp;&amp;</span> quarto publish netlify
+</code></pre></div>
+
+</div>
+
+<div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">quarto</span> <span class="n">publish</span> <span class="o">-</span><span class="n">h</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>  Usage:   quarto publish [provider] [path]
+  Version: 1.1.75
+
+
+  Description:
+
+    Publish a document or project. Available providers include:
+
+     - Quarto Pub (quarto-pub)                                 
+     - GitHub Pages (gh-pages)                                 
+     - RStudio Connect (connect)
+
+     - Netlify (netlify)                                       
+    Accounts are configured interactively during publishing.   
+    Manage/remove accounts with: quarto publish accounts
+
+  Options:
+
+    -h, --help              - Show this help.                                     
+    --id          &lt;id&gt;      - Identifier of content to publish                    
+    --server      &lt;server&gt;  - Server to publish to                                
+    --token       &lt;token&gt;   - Access token for publising provider                 
+    --no-render             - Do not render before publishing.                    
+    --no-prompt             - Do not prompt to confirm publishing destination     
+    --no-browser            - Do not open a browser to the site after publishing  
+    --log         &lt;level&gt;   - Path to log file                                    
+    --log-level   &lt;level&gt;   - Log level (info, warning, error, critical)          
+    --log-format  &lt;format&gt;  - Log format (plain, json-stream)                     
+    --quiet                 - Suppress console output.
+
+  Commands:
+
+    help  [command]  - Show this help or the help of a sub-command.
+
+  Examples:
+
+    Publish project (prompt for provider):  quarto publish                                                  
+    Publish document (prompt for provider): quarto publish document.qmd                                     
+    Publish project to Netlify:             quarto publish netlify                                          
+    Publish with explicit target:           quarto publish netlify --id DA36416-F950-4647-815C-01A24233E294 
+    Publish project to GitHub Pages:        quarto publish gh-pages                                         
+    Publish project to RStudio Connect:     quarto publish connect                                          
+    Publish with explicit credentials:      quarto publish connect --server example.com --token 01A24233E294
+    Publish without confirmation prompt:    quarto publish --no-prompt                                      
+    Publish without rendering:              quarto publish --no-render                                      
+    Publish without opening browser:        quarto publish --no-browser                                     
+    Manage/remove publishing accounts:      quarto publish accounts
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../directives/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Directives" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Directives
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--next" aria-label="Next: Explanations" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Explanations
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2020 onwards, Jeremy Howard
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+    and 
+    <a href="https://nbdev-mkdocs.airt.ai/" target="_blank" rel="noopener">
+      Material for nbdev
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../overrides/js/extra.js"></script>
+      
+        <script src="../../overrides/js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+    
+  </body>
+</html>

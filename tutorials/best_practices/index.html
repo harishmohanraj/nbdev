@@ -1,0 +1,2828 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Create delightful software with Jupyter Notebooks">
+      
+      
+        <meta name="author" content="Jeremy Howard and Hamel Husain">
+      
+      
+        <link rel="canonical" href="https://nbdev.fast.ai/tutorials/best_practices/">
+      
+      <link rel="icon" href="../../overrides/images/compass-outline.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Notebook Best Practices - nbdev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../overrides/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+    
+  
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="nbdev - Notebook Best Practices" />
+  <meta property="og:description" content="Create delightful software with Jupyter Notebooks" />
+  <meta property="og:url" content="https://nbdev.fast.ai/tutorials/best_practices/" />
+  <meta property="og:image" content="https://opengraph.githubassets.com/1671517121.069872/fastai/nbdev" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="nbdev - Notebook Best Practices" />
+  <meta name="twitter:description" content="Create delightful software with Jupyter Notebooks" />
+  <meta name="twitter:image" content="https://opengraph.githubassets.com/1671517121.069872/fastai/nbdev" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#notebook-best-practices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="nbdev" class="md-header__button md-logo" aria-label="nbdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 17 3.2-6.8L17 7l-3.2 6.8L7 17m5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            nbdev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Notebook Best Practices
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fastai/nbdev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nbdev
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="nbdev" class="md-nav__button md-logo" aria-label="nbdev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 17 3.2-6.8L17 7l-3.2 6.8L7 17m5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8Z"/></svg>
+
+    </a>
+    nbdev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fastai/nbdev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nbdev
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migrating/" class="md-nav__link">
+        nbdev1 Migration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Tutorials</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Notebook Best Practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Notebook Best Practices
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#know-which-form-of-notebook-youre-writing" class="md-nav__link">
+    Know which form of notebook you’re writing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-with-a-great-title-and-subtitle" class="md-nav__link">
+    Start with a great title and subtitle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduce-your-notebook" class="md-nav__link">
+    Introduce your notebook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-lots-of-code-examples-pictures-plots-and-videos" class="md-nav__link">
+    Use lots of code examples, pictures, plots, and videos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keep-docstrings-short-elaborate-in-separate-cells" class="md-nav__link">
+    Keep docstrings short; elaborate in separate cells
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-parameters-with-docments" class="md-nav__link">
+    Document parameters with docments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consider-turning-code-examples-into-tests-by-adding-assertions" class="md-nav__link">
+    Consider turning code examples into tests by adding assertions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-error-cases-as-tests" class="md-nav__link">
+    Document error-cases as tests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-related-symbols-with-doclinks" class="md-nav__link">
+    Reference related symbols with doclinks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-rich-representations-to-your-classes" class="md-nav__link">
+    Add rich representations to your classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-class-methods-with-show_doc-or-fastcorebasicspatch" class="md-nav__link">
+    Document class methods with show_doc or fastcore.basics.patch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-symbols-with-h2-sections" class="md-nav__link">
+    Group symbols with H2 sections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-long-explanations-with-h4-sections" class="md-nav__link">
+    Split long explanations with H4 sections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-an-annotated-example" class="md-nav__link">
+    Putting it all together: an annotated example
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting it all together: an annotated example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recap" class="md-nav__link">
+    Recap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blogging/" class="md-nav__link">
+        Blogging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs_only/" class="md-nav__link">
+        Documentation Only Sites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_friendly_jupyter/" class="md-nav__link">
+        Git-Friendly Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modular_nbdev/" class="md-nav__link">
+        Modular nbdev
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pre_commit/" class="md-nav__link">
+        Pre-Commit Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qmd_intro/" class="md-nav__link">
+        Qmd Documents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renderscript/" class="md-nav__link">
+        RenderScripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        End-To-End Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../explanations/">Explanations</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Explanations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Explanations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanations/config/" class="md-nav__link">
+        Settings.ini
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanations/directives/" class="md-nav__link">
+        Directives
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanations/docs/" class="md-nav__link">
+        Docs Website
+      </a>
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanations/why_nbdev/" class="md-nav__link">
+        Why nbdev
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../api/">API</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/clean/" class="md-nav__link">
+        clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cli/" class="md-nav__link">
+        cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/config/" class="md-nav__link">
+        config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/doclinks/" class="md-nav__link">
+        doclinks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/export/" class="md-nav__link">
+        export
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/frontmatter/" class="md-nav__link">
+        frontmatter
+      </a>
+    </li>
+  
+
+            
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/maker/" class="md-nav__link">
+        maker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/merge/" class="md-nav__link">
+        merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/migrate/" class="md-nav__link">
+        migrate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/process/" class="md-nav__link">
+        process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/processors/" class="md-nav__link">
+        processors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/qmd/" class="md-nav__link">
+        qmd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/quarto/" class="md-nav__link">
+        quarto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/release/" class="md-nav__link">
+        release
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/serve/" class="md-nav__link">
+        serve
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/showdoc/" class="md-nav__link">
+        showdoc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/sync/" class="md-nav__link">
+        sync
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/test/" class="md-nav__link">
+        test
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/clean/" class="md-nav__link">
+        nbdev.clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/cli/" class="md-nav__link">
+        nbdev.cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/config/" class="md-nav__link">
+        nbdev.config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/doclinks/" class="md-nav__link">
+        nbdev.doclinks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/export/" class="md-nav__link">
+        nbdev.export
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/extract_attachments/" class="md-nav__link">
+        nbdev.extract_attachments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/frontmatter/" class="md-nav__link">
+        nbdev.frontmatter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/imports/" class="md-nav__link">
+        nbdev.imports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/maker/" class="md-nav__link">
+        nbdev.maker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/merge/" class="md-nav__link">
+        nbdev.merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/migrate/" class="md-nav__link">
+        nbdev.migrate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/process/" class="md-nav__link">
+        nbdev.process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/processors/" class="md-nav__link">
+        nbdev.processors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/qmd/" class="md-nav__link">
+        nbdev.qmd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/quarto/" class="md-nav__link">
+        nbdev.quarto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/release/" class="md-nav__link">
+        nbdev.release
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/serve/" class="md-nav__link">
+        nbdev.serve
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/serve_drv/" class="md-nav__link">
+        nbdev.serve_drv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/showdoc/" class="md-nav__link">
+        nbdev.showdoc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/sync/" class="md-nav__link">
+        nbdev.sync
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_api/nbdev/test/" class="md-nav__link">
+        nbdev.test
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CLI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          CLI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_create_config/" class="md-nav__link">
+        nbdev_create_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_update/" class="md-nav__link">
+        nbdev_update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_export/" class="md-nav__link">
+        nbdev_export
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_fix/" class="md-nav__link">
+        nbdev_fix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_merge/" class="md-nav__link">
+        nbdev_merge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_trust/" class="md-nav__link">
+        nbdev_trust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_clean/" class="md-nav__link">
+        nbdev_clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_install_hooks/" class="md-nav__link">
+        nbdev_install_hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_filter/" class="md-nav__link">
+        nbdev_filter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_sidebar/" class="md-nav__link">
+        nbdev_sidebar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_test/" class="md-nav__link">
+        nbdev_test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_new/" class="md-nav__link">
+        nbdev_new
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_migrate/" class="md-nav__link">
+        nbdev_migrate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_install_quarto/" class="md-nav__link">
+        nbdev_install_quarto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_install/" class="md-nav__link">
+        nbdev_install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_docs/" class="md-nav__link">
+        nbdev_docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_preview/" class="md-nav__link">
+        nbdev_preview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_prepare/" class="md-nav__link">
+        nbdev_prepare
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_readme/" class="md-nav__link">
+        nbdev_readme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_release_gh/" class="md-nav__link">
+        nbdev_release_gh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_release_git/" class="md-nav__link">
+        nbdev_release_git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_changelog/" class="md-nav__link">
+        nbdev_changelog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_pypi/" class="md-nav__link">
+        nbdev_pypi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_conda/" class="md-nav__link">
+        nbdev_conda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_release_both/" class="md-nav__link">
+        nbdev_release_both
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_bump_version/" class="md-nav__link">
+        nbdev_bump_version
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_proc_nbs/" class="md-nav__link">
+        nbdev_proc_nbs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nbdev_cli/nbdev_help/" class="md-nav__link">
+        nbdev_help
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGELOG/" class="md-nav__link">
+        Releases
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#know-which-form-of-notebook-youre-writing" class="md-nav__link">
+    Know which form of notebook you’re writing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-with-a-great-title-and-subtitle" class="md-nav__link">
+    Start with a great title and subtitle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduce-your-notebook" class="md-nav__link">
+    Introduce your notebook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-lots-of-code-examples-pictures-plots-and-videos" class="md-nav__link">
+    Use lots of code examples, pictures, plots, and videos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keep-docstrings-short-elaborate-in-separate-cells" class="md-nav__link">
+    Keep docstrings short; elaborate in separate cells
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-parameters-with-docments" class="md-nav__link">
+    Document parameters with docments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consider-turning-code-examples-into-tests-by-adding-assertions" class="md-nav__link">
+    Consider turning code examples into tests by adding assertions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-error-cases-as-tests" class="md-nav__link">
+    Document error-cases as tests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-related-symbols-with-doclinks" class="md-nav__link">
+    Reference related symbols with doclinks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-rich-representations-to-your-classes" class="md-nav__link">
+    Add rich representations to your classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-class-methods-with-show_doc-or-fastcorebasicspatch" class="md-nav__link">
+    Document class methods with show_doc or fastcore.basics.patch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-symbols-with-h2-sections" class="md-nav__link">
+    Group symbols with H2 sections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-long-explanations-with-h4-sections" class="md-nav__link">
+    Split long explanations with H4 sections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-an-annotated-example" class="md-nav__link">
+    Putting it all together: an annotated example
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting it all together: an annotated example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recap" class="md-nav__link">
+    Recap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="notebook-best-practices">Notebook Best Practices<a class="headerlink" href="#notebook-best-practices" title="Permanent link">¤</a></h1>
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+
+<p>The flexibility offered by notebooks can be overwhelming. While there
+are industry standards for writing Python packages—like
+<a href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">numpy</a>
+and
+<a href="https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html">sphinx</a>
+docstrings, and <a href="https://docs.pytest.org/">pytest</a> and
+<a href="https://docs.python.org/3/library/unittest.html">unittest</a> testing
+frameworks—they weren’t designed for notebooks.</p>
+<p>This article walks you through the practices we’ve learned to leverage
+the full power of notebooks with nbdev[^1]. Our approach weaves code,
+tests, and docs into a single interactive context that invites
+experimentation. If you prefer to learn by example, you might want to
+start with <a href="#putting-it-all-together-an-annotated-example">the annotated
+example</a> and branch out
+from there.</p>
+<figure>
+<img src="images/marie-curie-notebook.jpg" class="rounded preview-image"
+alt="Photo of an opened research notebook with diagrams and writing in French" />
+<figcaption>Marie Curie’s research notebook dated 19-21 January 1900 (<a
+href="https://commons.wikimedia.org/wiki/File:Marie_Curie;_Holograph_Notebook._Wellcome_L0021265.jpg">source</a>).</figcaption>
+</figure>
+
+<h2 id="know-which-form-of-notebook-youre-writing">Know which form of notebook you’re writing<a class="headerlink" href="#know-which-form-of-notebook-youre-writing" title="Permanent link">¤</a></h2>
+<p>First of all, decide which form of notebook you’re writing. We’re fans
+of the <a href="https://diataxis.fr/">Diátaxis system</a> which classifies
+documentation into four forms: tutorials, how-to guides, explanations,
+and references. They’ve laid this out beautifully in the following
+diagram:</p>
+<p><a href="https://documentation.divio.com/_images/overview.png"><img src="https://documentation.divio.com/_images/overview.png"
+class="rounded"
+alt="A 2x2 matrix, from top-left to bottom-right, &#39;Tutorials (learning-oriented)&#39;, &#39;How-to guides (problem-oriented)&#39;, &#39;Explanation (understanding-oriented), and &#39;Reference (information-oriented)&#39;. Horizontal axis reads &#39;Most useful when we&#39;re studying&#39; on the left, and &#39;Most useful when we&#39;re working&#39; on the right. Vertical axis reads &#39;Practical steps&#39; on top, and &#39;Theoretical knowledge&#39; below." /></a></p>
+<h2 id="start-with-a-great-title-and-subtitle">Start with a great title and subtitle<a class="headerlink" href="#start-with-a-great-title-and-subtitle" title="Permanent link">¤</a></h2>
+<p>Start with a markdown cell at the top of your notebook with its title in
+an H1 header, and subtitle in a blockquote. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Great title</span>
+
+<span class="k">&gt; </span><span class="ge">And an even better subtitle</span>
+</code></pre></div>
+<p>The title will also be used to reference your page in the sidebar. You
+can also optionally add <a href="/api/frontmatter.ipynb">frontmatter</a> to this
+cell to customize nbdev and Quarto.</p>
+<h2 id="introduce-your-notebook">Introduce your notebook<a class="headerlink" href="#introduce-your-notebook" title="Permanent link">¤</a></h2>
+<p>Introduce your notebook with markdown cells below the title. We
+recommend a slightly different approach depending on the <a href="#know-which-form-of-notebook-youre-writing">form of
+documentation</a>:</p>
+<ul>
+<li><strong>Reference:</strong> Start with a brief description of the technical
+  component, and an overview that links to the main symbols in the page
+  (you might want to <a href="#reference-related-symbols-with-doclinks">use
+  doclinks</a>)</li>
+<li><strong>Tutorials and how-to guides:</strong> Describe what the reader will learn
+  and how. Keep it short and get to the subject matter quickly</li>
+<li><strong>Explanations:</strong> Since these are typically very focused, a short
+  description of the topic is often sufficient.</li>
+</ul>
+<h2 id="use-lots-of-code-examples-pictures-plots-and-videos">Use lots of code examples, pictures, plots, and videos<a class="headerlink" href="#use-lots-of-code-examples-pictures-plots-and-videos" title="Permanent link">¤</a></h2>
+<p>Take advantage of the richness of notebooks by including code examples,
+pictures, plots, and videos.</p>
+<p>Here are a few examples to get you started:</p>
+<ul>
+<li>fastai’s documentation makes extensive use of code examples, plots,
+  images, and tables, for example, the <a href="https://docs.fast.ai/tutorial.vision.html">computer vision
+  intro</a></li>
+<li><a href="/api/release.ipynb"><code>nbdev.release</code></a> opens with a terminal screencast
+  demo in SVG format created with <a href="https://asciinema.org/">asciinema</a>
+  and <a href="https://github.com/marionebl/svg-term-cli">svg-term-cli</a></li>
+<li>The <a href="/explanations/docs.ipynb#overview">documentation explanation</a>
+  describes a complex data pipeline using a <a href="https://quarto.org/docs/authoring/diagrams.html">Mermaid
+  diagram</a></li>
+<li>The <a href="/explanations/directives.ipynb">directives explanation</a> showcases
+  all of nbdev’s directives with executable examples in call-out cards
+  (and makes great use of emojis too!)</li>
+<li><a href="https://www.rdkit.org/docs/Cookbook.html#drawing-molecules-jupyter">RDKit</a>
+  renders beautiful molecule diagrams</li>
+</ul>
+<h2 id="keep-docstrings-short-elaborate-in-separate-cells">Keep docstrings short; elaborate in separate cells<a class="headerlink" href="#keep-docstrings-short-elaborate-in-separate-cells" title="Permanent link">¤</a></h2>
+<p>While nbdev renders docstrings as markdown, they aren’t rendered
+correctly when using <code>symbol?</code> or <code>help(symbol)</code> and they can’t include
+executed code. By splitting longer docstrings across separate code and
+markdown cells you can <a href="#use-lots-of-code-examples-pictures-plots-and-videos">use code examples, pictures, plots, and
+videos</a>.</p>
+<p>We find a single-line summary sufficient for most docstrings.</p>
+<h2 id="document-parameters-with-docments">Document parameters with docments<a class="headerlink" href="#document-parameters-with-docments" title="Permanent link">¤</a></h2>
+<p><a href="https://fastcore.fast.ai/docments.html"><code>fastcore.docments</code></a> is a
+concise way to document parameters that is beautifully rendered by
+nbdev. For example, this function:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_n</span><span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="c1"># Number of cards to draw</span>
+           <span class="n">replace</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Draw with replacement?</span>
+          <span class="p">)</span><span class="o">-&gt;</span><span class="nb">list</span><span class="p">:</span> <span class="c1"># List of cards</span>
+    <span class="s2">&quot;Draw `n` cards.&quot;</span>
+</code></pre></div>
+<p>…would include the following table as part of its documentation:</p>
+<div class="py-2 px-3 mb-4 border rounded shadow-sm">
+
+|             | **Type** | **Default** | **Details**             |
+|-------------|----------|-------------|-------------------------|
+| n           | int      |             | Number of cards to draw |
+| replace     | bool     | True        | Draw with replacement?  |
+| **Returns** | **list** |             | **List of cards**       |
+
+</div>
+
+<p>nbdev also supports some numpy docstring sections. For example, this
+code snippet would produce the same table (there’s no need to include
+types like in the docstring if you already have annotations):</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_n</span><span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">replace</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Cards</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Draw `n` cards.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n</span>
+<span class="sd">        Number of cards to draw</span>
+<span class="sd">    replace</span>
+<span class="sd">        Draw with replacement?</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cards</span>
+<span class="sd">        List of cards</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+<div>
+
+> **Tip**
+>
+> You can render a symbol’s parameters table directly with
+> [`DocmentTbl`](https://nbdev.fast.ai/api/showdoc.html#docmenttbl). In
+> fact, that’s how we rendered the table above.
+
+</div>
+
+<h2 id="consider-turning-code-examples-into-tests-by-adding-assertions">Consider turning code examples into tests by adding assertions<a class="headerlink" href="#consider-turning-code-examples-into-tests-by-adding-assertions" title="Permanent link">¤</a></h2>
+<p>nbdev blurs the lines between code, docs, and tests. <em>Every</em> code cell
+is run as a test (unless it’s explicitly marked otherwise), and any
+error in the cell fails the test.</p>
+<p>Consider turning your code examples into tests by adding assertions – if
+they would make valuable tests and if it doesn’t hurt readability.
+<a href="https://fastcore.fast.ai/test.html"><code>fastcore.test</code></a> provides a set of
+light wrappers around <code>assert</code> for better notebook tests (for example,
+they print both objects on error if they differ).</p>
+<p>Here’s an example using
+<a href="https://fastcore.fast.ai/test.html#test_eq"><code>fastcore.test.test_eq</code></a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">inc</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="document-error-cases-as-tests">Document error-cases as tests<a class="headerlink" href="#document-error-cases-as-tests" title="Permanent link">¤</a></h2>
+<p>Docstring-driven approaches typically document the errors raised by an
+object using plaintext descriptions, for example, in a “raises” section.</p>
+<p>In nbdev, we recommend documenting errors with actual failing code using
+<a href="https://fastcore.fast.ai/test.html#test_fail"><code>fastcore.test.test_fail</code></a>.
+For example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<span class="n">test_fail</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">divide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">contains</span><span class="o">=</span><span class="s2">&quot;division by zero&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The first argument is a <code>lambda</code> since we need to allow <code>test_fail</code> to
+control its execution and catch any errors.</p>
+<h2 id="reference-related-symbols-with-doclinks">Reference related symbols with doclinks<a class="headerlink" href="#reference-related-symbols-with-doclinks" title="Permanent link">¤</a></h2>
+<p>If you surround a symbol with backticks, nbdev will automatically link
+to that symbol’s reference page. We call these
+<a href="/api/doclinks.ipynb">doclinks</a>.</p>
+<p>Prefer fully qualified symbol paths, like <code>package.module.symbol</code>
+instead of <code>symbol</code>. It may be more verbose but it helps users know
+which module a symbol originates from, which is especially important for
+third-party packages.</p>
+<p>Any package created with nbdev will automatically support doclinks.
+Non-nbdev packages can be supported by creating a minimal nbdev-index
+package. <a href="https://github.com/fastai/nbdev-index"><code>nbdev-index</code></a> is a
+collection of such packages, which already supports django, numpy,
+pandas, pytorch, scipy, sphinx, the Python standard library, and even
+other programming languages like APL!</p>
+<h2 id="add-rich-representations-to-your-classes">Add rich representations to your classes<a class="headerlink" href="#add-rich-representations-to-your-classes" title="Permanent link">¤</a></h2>
+<p>This is another way to take advantage of the <a href="https://ipython.readthedocs.io/en/stable/config/integrating.html#rich-display">rich display feature of
+notebooks</a>.
+You can provide rich representations to your object by defining a
+<code>_repr_markdown_</code> method that returns markdown text (which may also
+include HTML/CSS).</p>
+<p>Here’s a simple example to get you started:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Color</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+    <span class="k">def</span> <span class="nf">_repr_markdown_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;background-color: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="si">}</span><span class="s1">; width: 50px; height: 50px; margin: 10px&#39;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;div style=&quot;</span><span class="si">{</span><span class="n">style</span><span class="si">}</span><span class="s1">&quot;&gt;&lt;/div&gt;&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p><div
+style="background-color: green; width: 50px; height: 50px; margin: 10px">
+
+</div>
+</p>
+<div class="highlight"><pre><span></span><code><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p><div
+style="background-color: blue; width: 50px; height: 50px; margin: 10px">
+
+</div>
+</p>
+<p>Also see <a href="#use-lots-of-code-examples-pictures-plots-and-videos">the earlier list of example
+projects</a> that
+make use of beautiful visual representations.</p>
+<h2 id="document-class-methods-with-show_doc-or-fastcorebasicspatch">Document class methods with <a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a> or <a href="https://fastcore.fast.ai/basics.html#patch"><code>fastcore.basics.patch</code></a><a class="headerlink" href="#document-class-methods-with-show_doc-or-fastcorebasicspatch" title="Permanent link">¤</a></h2>
+<p>nbdev automatically documents exported function and class definitions
+with <a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a>.
+However, it’s up to you to document class methods. There are two ways to
+do that: calling
+<a href="https://nbdev.fast.ai/api/showdoc.html#show_doc"><code>show_doc</code></a> on the
+method, or defining the method with the
+<a href="https://fastcore.fast.ai/basics.html#patch"><code>fastcore.basics.patch</code></a>
+decorator.</p>
+<div class="panel-tabset">
+
+### Notebook (show_doc)
+
+If your class is defined in a single cell, use
+[`show_doc`](https://nbdev.fast.ai/api/showdoc.html#show_doc). Here’s
+what your notebook might look like:
+
+<div class="pt-4 pb-1 px-3 mb-2 border rounded shadow-sm">
+
+<div class="highlight"><pre><span></span><code><span class="c1">#| export</span>
+<span class="k">class</span> <span class="nc">Number</span><span class="p">:</span>
+    <span class="s2">&quot;A number.&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">num</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="s2">&quot;Sum of this and `other`.&quot;</span>
+        <span class="k">return</span> <span class="n">Number</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Number(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="si">}</span><span class="s1">)&#39;</span>
+</code></pre></div>
+
+For example, here is the number 5:
+
+<div class="highlight"><pre><span></span><code><span class="n">Number</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">show_doc</span><span class="p">(</span><span class="n">Number</span><span class="o">.</span><span class="fm">__add__</span><span class="p">)</span>
+</code></pre></div>
+
+For example:
+
+<div class="highlight"><pre><span></span><code><span class="n">Number</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">Number</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+
+### Notebook (@patch)
+
+If you split your class definition across cells with
+[`fastcore.basics.patch`](https://fastcore.fast.ai/basics.html#patch),
+here’s what your notebook might look like:
+
+<div class="pt-4 pb-1 px-3 mb-2 border rounded shadow-sm">
+
+<div class="highlight"><pre><span></span><code><span class="c1">#| export</span>
+<span class="k">class</span> <span class="nc">Number</span><span class="p">:</span>
+    <span class="s2">&quot;A number.&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">num</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Number(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="si">}</span><span class="s1">)&#39;</span>
+</code></pre></div>
+
+For example, here is the number 5:
+
+<div class="highlight"><pre><span></span><code><span class="n">Number</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#| export</span>
+<span class="nd">@patch</span>
+<span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span><span class="n">Number</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="s2">&quot;Sum of this and `other`.&quot;</span>
+    <span class="k">return</span> <span class="n">Number</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">num</span><span class="p">)</span>
+</code></pre></div>
+
+For example:
+
+<div class="highlight"><pre><span></span><code><span class="n">Number</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">Number</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+
+### Docs
+
+In either case, this is how the documentation would be rendered:
+
+<div>
+
+------------------------------------------------------------------------
+
+### Number
+
+>      Number (num)
+
+A number.
+
+For example, here is the number 5:
+
+<div class="highlight"><pre><span></span><code><span class="n">Number</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+    Number(5)
+
+------------------------------------------------------------------------
+
+### Number.\_\_add\_\_
+
+>      Number.__add__ (other)
+
+Sum of this and `other`.
+
+For example:
+
+<div class="highlight"><pre><span></span><code><span class="n">Number</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">Number</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+
+    Number(7)
+
+</div>
+
+</div>
+
+<h2 id="group-symbols-with-h2-sections">Group symbols with H2 sections<a class="headerlink" href="#group-symbols-with-h2-sections" title="Permanent link">¤</a></h2>
+<p>As your notebooks grow, consider grouping related symbols using markdown
+cells with level 2 headers. Since nbdev displays documented symbols as
+level 3 headers, this would group all symbols below your level 2 header.</p>
+<p>Here is the markdown syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Section title</span>
+</code></pre></div>
+<h2 id="split-long-explanations-with-h4-sections">Split long explanations with H4 sections<a class="headerlink" href="#split-long-explanations-with-h4-sections" title="Permanent link">¤</a></h2>
+<p>Similar to the previous section, as a symbol’s explanation grows,
+consider grouping its cells using level 4 headers. This is the
+recommended way to structure your reference docs, for example, to
+achieve numpy-style structures with sections like notes, examples,
+methods, and so on.</p>
+<p>Here’s the markdown syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="gu">#### Section title</span>
+</code></pre></div>
+<h2 id="putting-it-all-together-an-annotated-example">Putting it all together: an annotated example<a class="headerlink" href="#putting-it-all-together-an-annotated-example" title="Permanent link">¤</a></h2>
+<p>In this section, we’ll guide you through a full example of writing a
+documented and tested function in a notebook using all of the principles
+described above. We’ll use the
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.all.html#numpy.all"><code>numpy.all</code></a>
+function since it follows the widely-known numpy-docstring standard for
+.py files.</p>
+<p>Below is the definition of the
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.all.html#numpy.all"><code>numpy.all</code></a>
+function. Take note of how all of the information is included in the
+docstring. While this works well for .py files, it doesn’t let us weave
+executable code with rich markdown as we can in notebooks:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">all</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test whether all array elements along a given axis evaluate to True.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : array_like</span>
+<span class="sd">        Input array or object that can be converted to an array.</span>
+<span class="sd">    axis : None or int or tuple of ints, optional</span>
+<span class="sd">        Axis or axes along which a logical AND reduction is performed.</span>
+<span class="sd">        The default (``axis=None``) is to perform a logical AND over all</span>
+<span class="sd">        the dimensions of the input array. `axis` may be negative, in</span>
+<span class="sd">        which case it counts from the last to the first axis.</span>
+<span class="sd">        .. versionadded:: 1.7.0</span>
+<span class="sd">        If this is a tuple of ints, a reduction is performed on multiple</span>
+<span class="sd">        axes, instead of a single axis or all the axes as before.</span>
+<span class="sd">    out : ndarray, optional</span>
+<span class="sd">        Alternate output array in which to place the result.</span>
+<span class="sd">        It must have the same shape as the expected output and its</span>
+<span class="sd">        type is preserved (e.g., if ``dtype(out)`` is float, the result</span>
+<span class="sd">        will consist of 0.0&#39;s and 1.0&#39;s). See :ref:`ufuncs-output-type` for more</span>
+<span class="sd">        details.</span>
+<span class="sd">    keepdims : bool, optional</span>
+<span class="sd">        If this is set to True, the axes which are reduced are left</span>
+<span class="sd">        in the result as dimensions with size one. With this option,</span>
+<span class="sd">        the result will broadcast correctly against the input array.</span>
+<span class="sd">        If the default value is passed, then `keepdims` will not be</span>
+<span class="sd">        passed through to the `all` method of sub-classes of</span>
+<span class="sd">        `ndarray`, however any non-default value will be.  If the</span>
+<span class="sd">        sub-class&#39; method does not implement `keepdims` any</span>
+<span class="sd">        exceptions will be raised.</span>
+<span class="sd">    where : array_like of bool, optional</span>
+<span class="sd">        Elements to include in checking for all `True` values.</span>
+<span class="sd">        See `~numpy.ufunc.reduce` for details.</span>
+<span class="sd">        .. versionadded:: 1.20.0</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    all : ndarray, bool</span>
+<span class="sd">        A new boolean or array is returned unless `out` is specified,</span>
+<span class="sd">        in which case a reference to `out` is returned.</span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    ndarray.all : equivalent method</span>
+<span class="sd">    any : Test whether any element along a given axis evaluates to True.</span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Not a Number (NaN), positive infinity and negative infinity</span>
+<span class="sd">    evaluate to `True` because these are not equal to zero.</span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.all([[True,False],[True,True]])</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; np.all([[True,False],[True,True]], axis=0)</span>
+<span class="sd">    array([ True, False])</span>
+<span class="sd">    &gt;&gt;&gt; np.all([-1, 4, 5])</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; np.all([1.0, np.nan])</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; np.all([[True, True], [False, True]], where=[[True], [False]])</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; o=np.array(False)</span>
+<span class="sd">    &gt;&gt;&gt; z=np.all([-1, 4, 5], out=o)</span>
+<span class="sd">    &gt;&gt;&gt; id(z), id(o), z</span>
+<span class="sd">    (28293632, 28293632, array(True)) # may vary</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>Alternatively, Here is how we’d write
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.all.html#numpy.all"><code>numpy.all</code></a>
+in a notebook using nbdev. The first step is to define the function:</p>
+<div class="column-screen-inset-right">
+
+<div class="highlight"><pre><span></span><code><span class="c1">#| export</span>
+<span class="k">def</span> <span class="nf">all</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="c1"># Input array or object that can be converted to an array.</span>
+        <span class="n">axis</span><span class="p">:</span><span class="nb">int</span><span class="o">|</span><span class="nb">tuple</span><span class="o">|</span><span class="kc">None</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># Axis or axes along which a logical AND reduction is performed (default: all).</span>
+        <span class="n">out</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">|</span><span class="kc">None</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># Alternate output array in which to place the result.</span>
+        <span class="n">keepdims</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">,</span> <span class="c1"># Leave reduced one-dimensional axes in the result?</span>
+        <span class="n">where</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">,</span> <span class="c1"># Elements to include in reduction. See `numpy.ufunc.reduce` for details. New in version 1.20.0.</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">|</span><span class="nb">bool</span><span class="p">:</span> <span class="c1"># A new boolean or array, or a reference to `out` if its specified.</span>
+    <span class="s2">&quot;Test whether all array elements along a given axis evaluate to `True`.&quot;</span>
+    <span class="o">...</span>
+</code></pre></div>
+
+</div>
+
+<p>We can observe the following differences between this code and
+numpy-docstrings:</p>
+<ul>
+<li>The definition uses simple type annotations, which will be rendered in
+  the function’s parameters table below</li>
+<li>Parameters are described with a short comment, called
+  <a href="#document-parameters-with-docments">docments</a> – a concise alternative
+  to numpy and sphinx docstring formats (although nbdev does support
+  numpy docstrings see <a href="#document-parameters-with-docments">this
+  example</a>)</li>
+<li>The docstring and parameter descriptions are all short, single-line
+  summaries. We prefer to <a href="#keep-docstrings-short-elaborate-in-separate-cells">keep docstrings short and instead elaborate
+  in separate
+  cells</a>, where we
+  can use markdown and real code examples.</li>
+</ul>
+<p>Note: the use of <code>|</code> syntax for unions e.g. <code>int|tuple|None</code> (equivalent
+to <code>Union[int, tuple, None]</code>) requires using Python 3.10 or by treating
+all annotations as strings using <code>from __future__ import annotations</code>
+which is available from Python 3.7.</p>
+<p>Our function definition is automatically rendered in the docs like this.
+Note that parameter names, types, defaults, and details are all parsed
+from the definition which means you don’t have to repeat yourself.</p>
+<p><div
+class="pt-2 pb-1 px-3 mt-2 mb-4 border rounded shadow-sm overflow-auto">
+
+------------------------------------------------------------------------
+
+### all
+
+>      all (a, axis:Union[int,tuple,NoneType]=None,
+>           out:Optional[numpy.ndarray]=None, keepdims:bool=<no value>,
+>           where=<no value>)
+
+Test whether all array elements along a given axis evaluate to `True`.
+
+|             | **Type**               | **Default** | **Details**                                                                                                                                                                                   |
+|-------------|------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| a           |                        |             | Input array or object that can be converted to an array.                                                                                                                                      |
+| axis        | int \| tuple \| None   | None        | Axis or axes along which a logical AND reduction is performed (default: all).                                                                                                                 |
+| out         | np.ndarray \| None     | None        | Alternate output array in which to place the result.                                                                                                                                          |
+| keepdims    | bool                   | <no value>  | Leave reduced one-dimensional axes in the result?                                                                                                                                             |
+| where       | \_NoValueType          | <no value>  | Elements to include in reduction. See [`numpy.ufunc.reduce`](https://numpy.org/doc/stable/reference/generated/numpy.ufunc.reduce.html#numpy.ufunc.reduce) for details. New in version 1.20.0. |
+| **Returns** | **np.ndarray \| bool** |             | **A new boolean or array, or a reference to `out` if its specified.**                                                                                                                         |
+
+</div>
+</p>
+<p>Next, describe how to use your function using markdown cells and <a href="#use-lots-of-code-examples-pictures-plots-and-videos">lots
+of code examples</a>.
+This is the biggest benefit to developing in notebooks: instead of
+copying and pasting code examples into plaintext, you can include real
+executeable code examples.</p>
+<p>We start with basic usage first:</p>
+<div class="pt-3 pb-1 px-3 mt-2 mb-4 border rounded shadow-sm">
+
+For example:
+
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">True</span><span class="p">,</span><span class="kc">False</span><span class="p">],[</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">]]</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+
+<p>Our code examples <a href="#consider-turning-code-examples-into-tests-by-adding-assertions">use assertion functions from
+<code>fastcore.test</code></a>,
+so that they serve as both docs and tests.
+<a href="https://nbdev.fast.ai/api/test.html#nbdev_test"><code>nbdev_test</code></a> runs
+every code cell as a test (unless it’s explicitly marked otherwise), and
+any error in the cell fails the test.</p>
+<p>Having described basic usage, we now elaborate on more advanced
+functionality for each parameter. This differs from numpy’s approach
+which includes all parameter docs in the table and where not all
+parameters have code examples.</p>
+<div class="pt-3 pb-1 px-3 mt-2 mb-4 border rounded shadow-sm">
+
+With `axis`:
+
+<div class="highlight"><pre><span></span><code><span class="n">test_eq</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span><span class="kc">False</span><span class="p">])</span>
+</code></pre></div>
+
+`axis` may be negative, in which case it counts from the last to the
+first axis:
+
+<div class="highlight"><pre><span></span><code><span class="n">test_eq</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">])</span>
+</code></pre></div>
+
+If `axis` is a tuple of ints, a reduction is performed on multiple axes,
+instead of a single axis or all the axes as before.
+
+<div class="highlight"><pre><span></span><code><span class="n">test_eq</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+Integers, floats, not a number (nan), and infinity all evaluate to
+`True` because they’re not equal to zero:
+
+<div class="highlight"><pre><span></span><code><span class="n">test_eq</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">]),</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+You can use `where` to test specific elements. For example, this tests
+only the second column:
+
+<div class="highlight"><pre><span></span><code><span class="n">test_eq</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">[[</span><span class="kc">False</span><span class="p">],[</span><span class="kc">True</span><span class="p">]]),</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+The output can be stored in an optional `out` array. If provided, a
+reference to `out` will be returned:
+
+<div class="highlight"><pre><span></span><code><span class="n">o</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">out</span><span class="o">=</span><span class="n">o</span><span class="p">)</span>
+<span class="n">test_is</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+`out` must have the same shape as the expected output and its type is
+preserved (e.g., if `dtype(out)` is float, the result will consist of
+0.0’s and 1.0’s). See [Output type
+determination](https://numpy.org/doc/stable/user/basics.ufuncs.html#ufuncs-output-type)
+for more details.
+
+With `keepdims`, the result will broadcast correctly against the input
+array.
+
+<div class="highlight"><pre><span></span><code><span class="n">test_eq</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="p">[[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]])</span> <span class="c1"># Note the nested list</span>
+</code></pre></div>
+
+If the default value is passed, then `keepdims` will not be passed
+through to the `all` method of sub-classes of `ndarray`, however any
+non-default value will be. If the sub-class’ method does not implement
+`keepdims` any exceptions will be raised.
+
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyArray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> <span class="o">...</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">MyArray</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">y</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># No TypeError since `keepdims` isn&#39;t passed</span>
+<span class="n">test_fail</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">contains</span><span class="o">=</span><span class="s2">&quot;all() got an unexpected keyword argument &#39;keepdims&#39;&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+
+<p>Since we prefer to document via code examples, we also document
+error-cases with assertions using
+<a href="https://fastcore.fast.ai/test.html#test_fail"><code>fastcore.test.test_fail</code></a>.
+This differs from docstring-based approaches which usually document
+error-cases in prose, usually in a “raises” section of the docstring.</p>
+<p>Finally, we link to related symbols with
+<a href="#reference-related-symbols-with-doclinks">doclinks</a> (symbols surrounded
+in backticks are automatically linked) and describe their relation using
+code examples.</p>
+<div class="pt-3 pb-1 px-3 mt-2 mb-4 border rounded shadow-sm">
+
+The
+[`numpy.ndarray.all`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.all.html#numpy.ndarray.all)
+method is equivalent to calling
+[`numpy.all`](https://numpy.org/doc/stable/reference/generated/numpy.all.html#numpy.all)
+with the array:
+
+<div class="highlight"><pre><span></span><code><span class="n">test_eq</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div>
+
+In contrast,
+[`numpy.any`](https://numpy.org/doc/stable/reference/generated/numpy.any.html#numpy.any)
+tests whether *any* element evaluates to `True` (rather than *all*
+elements):
+
+<div class="highlight"><pre><span></span><code><span class="n">test_eq</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+
+<h3 id="recap">Recap<a class="headerlink" href="#recap" title="Permanent link">¤</a></h3>
+<p>In summary, here is how the nbdev version of
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.all.html#numpy.all"><code>numpy.all</code></a>
+differs from the numpy docstring. nbdev uses:</p>
+<ul>
+<li>Type annotations and docments instead of the numpy docstring format
+  (although nbdev supports numpy docstrings too)</li>
+<li>Short parameter descriptions, with details in separate cells with
+  markdown and code example</li>
+<li>Doclinks to related symbols instead of a “See also” section</li>
+<li>Lots of code examples (which are also tests) mixed with prose to
+  describe how to use the function</li>
+<li>Code examples with assertions to document error-cases instead of a
+  “Raises” section.</li>
+</ul>
+<p>[^1]: We’re always open to improving our workflows and don’t like to be
+    too prescriptive about style. If you have any ideas, please feel
+    free to post them in the <a href="https://forums.fast.ai/c/nbdev/48">forum</a>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../migrating/" class="md-footer__link md-footer__link--prev" aria-label="Previous: nbdev1 Migration" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              nbdev1 Migration
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../blogging/" class="md-footer__link md-footer__link--next" aria-label="Next: Blogging" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Blogging
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2020 onwards, Jeremy Howard
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+    and 
+    <a href="https://nbdev-mkdocs.airt.ai/" target="_blank" rel="noopener">
+      Material for nbdev
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../overrides/js/extra.js"></script>
+      
+        <script src="../../overrides/js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+    
+  </body>
+</html>
